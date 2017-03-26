@@ -588,6 +588,259 @@ p\left(n\right)\Neg<p\left(n\right)\frac{1}{p\left(n\right)q\left(n\right)}=\fra
 4
 \end_layout
 
+\begin_layout Subsection*
+סעיף א'
+\end_layout
+
+\begin_layout Standard
+נניח ש-
+\begin_inset Formula $G_{1},G_{2}$
+\end_inset
+
+ הם
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\bar default
+\strikeout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+\lang english
+PRG
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+\lang hebrew
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\bar default
+\strikeout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+כך ש-
+\begin_inset Formula $G_{1}=G_{2}$
+\end_inset
+
+.
+ אזי 
+\begin_inset Formula $G$
+\end_inset
+
+ המוגדר כבשאלה אינו
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\bar default
+\strikeout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+\lang english
+PRG
+\lang hebrew
+.
+\end_layout
+
+\begin_layout Standard
+נראה מבחין )
+\lang english
+distinguisher
+\lang hebrew
+( יעיל שמבדיל בין פלט של 
+\begin_inset Formula $G$
+\end_inset
+
+ לבין פלט אקראי בסיכוי לא זניח.
+ נגדיר את 
+\begin_inset Formula $D\left(c\right)$
+\end_inset
+
+ להחזיר 
+\begin_inset Formula $0$
+\end_inset
+
+ אם 
+\begin_inset Formula $\left|c\right|$
+\end_inset
+
+ אי-זוגי.
+ אחרת, אם 
+\begin_inset Formula $\left|c\right|=2n$
+\end_inset
+
+ אז 
+\begin_inset Formula $D$
+\end_inset
+
+ יחזיר
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\numeric on
+\bar default
+\strikeout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+1
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\numeric off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\bar default
+\strikeout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+אם"ם 
+\begin_inset Formula $c\left[1.\dots n\right]=c\left[n+1\dots2n\right]$
+\end_inset
+
+, כלומר אם 
+\begin_inset Formula $n$
+\end_inset
+
+ הביטים הראשונים ב-
+\begin_inset Formula $c$
+\end_inset
+
+ זהים ל-
+\begin_inset Formula $n$
+\end_inset
+
+ הביטים האחרונים.
+\end_layout
+
+\begin_layout Standard
+אם כך, לכל קלט 
+\begin_inset Formula $s$
+\end_inset
+
+ בעל 
+\begin_inset Formula $n$
+\end_inset
+
+ ביטים כך ש-
+\begin_inset Formula $c=G\left(s\right)=G_{1}\left(s\right)||G_{2}\left(s\right)=G_{1}\left(s\right)||G_{1}\left(s\right)$
+\end_inset
+
+ מתקיים ש-
+\begin_inset Formula $n$
+\end_inset
+
+ הביטים הראשונים ב-
+\begin_inset Formula $c$
+\end_inset
+
+ זהים ל-
+\begin_inset Formula $n$
+\end_inset
+
+ הביטים האחרונים, ולכן 
+\begin_inset Formula $D$
+\end_inset
+
+ על 
+\begin_inset Formula $c$
+\end_inset
+
+ יחזיר 
+\begin_inset Formula $1$
+\end_inset
+
+.
+ לכן: 
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+להשלים לפי ההגדרה
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection*
+סעיף ב'
+\end_layout
+
 \begin_layout Section*
 שאלה
 \family roman
