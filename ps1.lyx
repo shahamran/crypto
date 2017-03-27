@@ -823,22 +823,131 @@ distinguisher
 \begin_inset Formula $1$
 \end_inset
 
-.
+ )תמיד(.
  לכן: 
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-להשלים לפי ההגדרה
-\end_layout
+\begin_inset Formula 
+\[
+\left|\Pr\left[D\left(G\left(s\right)\right)=1\right]-\Pr\left[D\left(r\right)\right]=1\right|=\left|1-\left(\nicefrac{1}{2}\right)^{n}\right|=1-\left(\nicefrac{1}{2}\right)^{n}\text{ where }r\leftarrow\left\{ 0,1\right\} ^{2n}
+\]
 
 \end_inset
 
+כי הסיכוי שהביט ה-
+\begin_inset Formula $i$
+\end_inset
 
+ יהיה שווה לביט ה-
+\begin_inset Formula $n+i$
+\end_inset
+
+ לכל 
+\begin_inset Formula $0\le i<n$
+\end_inset
+
+ הוא 
+\begin_inset Formula $\nicefrac{1}{2}$
+\end_inset
+
+, ומכיוון שההתפלגות בה נבחר 
+\begin_inset Formula $r$
+\end_inset
+
+ היא אחידה הביט ה-
+\begin_inset Formula $i$
+\end_inset
+
+ ב"ת בביט ה-
+\begin_inset Formula $j$
+\end_inset
+
+ לכל 
+\begin_inset Formula $0\le i<j<n$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+לכן, לפי הגדרה, 
+\begin_inset Formula $G$
+\end_inset
+
+ אינו
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\bar default
+\strikeout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+\lang english
+PRG
+\lang hebrew
+.
 \end_layout
 
 \begin_layout Subsection*
 סעיף ב'
+\end_layout
+
+\begin_layout Standard
+יהי 
+\begin_inset Formula $D$
+\end_inset
+
+ 
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+מבחין יעיל )
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\bar default
+\strikeout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+\lang english
+PPT
+\lang hebrew
+(.
+ נגדיר: 
+\begin_inset Formula $\Neg=\Pr\left[D\left(G\left(s_{1}||s_{2}\right)\right)=1\right]-\frac{1}{2}=\Pr\left[D\left(G_{1}\left(s_{1}\right)||G_{2}\left(s_{2}\right)\right)=1\right]-\frac{1}{2}$
+\end_inset
+
+ כאשר 
+\begin_inset Formula $\left|s_{1}\right|\in\left\{ \left|s_{2}\right|,\left|s_{2}\right|+1\right\} $
+\end_inset
+
+.
 \end_layout
 
 \begin_layout Section*
