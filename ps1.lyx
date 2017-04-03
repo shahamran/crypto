@@ -176,6 +176,27 @@
 203781000
 \end_layout
 
+\begin_layout Remarks
+לאורך התרגיל אני מסמן ב-
+\begin_inset Formula $U_{n}$
+\end_inset
+
+ איבר מההתפלגות האחידה על 
+\begin_inset Formula $\left\{ 0,1\right\} ^{n}$
+\end_inset
+
+.
+ למשל: 
+\begin_inset Formula 
+\[
+\Pr\left[D\left(U_{n}\right)=1\right]=\Pr_{s\leftarrow\left\{ 0,1\right\} ^{n}}\left[D\left(s\right)=1\right]
+\]
+
+\end_inset
+
+
+\end_layout
+
 \begin_layout Section*
 שאלה
 \family roman
@@ -205,12 +226,40 @@
 1
 \end_layout
 
+\begin_layout Remarks
+נשים לב שההתפלגות 
+\begin_inset Formula $C$
+\end_inset
+
+ על 
+\begin_inset Formula ${\cal C}$
+\end_inset
+
+ נקבעת על סמך ההתפלגות 
+\begin_inset Formula $M$
+\end_inset
+
+ על 
+\begin_inset Formula ${\cal M}$
+\end_inset
+
+ ו-
+\begin_inset Formula $K$
+\end_inset
+
+ על 
+\begin_inset Formula ${\cal K}$
+\end_inset
+
+
+\end_layout
+
 \begin_layout Standard
 תהי 
 \begin_inset Formula $\Pi$
 \end_inset
 
- שיטת הצפנה מושלמת.
+ מערכת הצפנה בטוחה בצורה מושלמת.
  אזי לכל התפלגות 
 \begin_inset Formula $M$
 \end_inset
@@ -339,7 +388,7 @@
 \begin_inset Formula $\Pi$
 \end_inset
 
- היא שיטת הצפנה מושלמת.
+ היא מע' בטוחה בצורה מושלמת.
 \end_layout
 
 \begin_layout Section*
@@ -372,78 +421,7 @@
 \end_layout
 
 \begin_layout Standard
-נסמן את
-\family roman
-\series medium
-\shape up
-\size normal
-\emph off
-\bar no
-\strikeout off
-\uuline off
-\uwave off
-\noun off
-\color none
- 
-\family default
-\series default
-\shape default
-\size default
-\emph default
-\bar default
-\strikeout default
-\uuline default
-\uwave default
-\noun default
-\color inherit
-\lang english
-OTP
-\family roman
-\series medium
-\shape up
-\size normal
-\emph off
-\bar no
-\strikeout off
-\uuline off
-\uwave off
-\noun off
-\color none
-\lang hebrew
- 
-\family default
-\series default
-\shape default
-\size default
-\emph default
-\bar default
-\strikeout default
-\uuline default
-\uwave default
-\noun default
-\color inherit
-ב-
-\begin_inset Formula $\Pi$
-\end_inset
-
- ונניח בשלילה שקיים יריב 
-\begin_inset Formula $\Ad$
-\end_inset
-
- כך שלכל פונ' זניחה 
-\begin_inset Formula $\Neg$
-\end_inset
-
- מתקיים 
-\begin_inset Formula $\ind>\frac{1}{2}+\Neg$
-\end_inset
-
-.
- לכן, עבור מפתח 
-\begin_inset Formula $k$
-\end_inset
-
-
+בספר.
 \end_layout
 
 \begin_layout Section*
@@ -499,7 +477,7 @@ OTP
 \begin_inset Formula $p\cdot q$
 \end_inset
 
- היא פולינום.
+ פולינום.
  מכך ש-
 \begin_inset Formula $\Neg$
 \end_inset
@@ -687,7 +665,16 @@ PRG
 \end_layout
 
 \begin_layout Standard
-נראה מבחין )
+יהי 
+\begin_inset Formula $\ell\left(n\right)>n$
+\end_inset
+
+ פולינום כך ש-
+\begin_inset Formula $\left|G_{1}\left(s\right)\right|=\ell\left(\left|s\right|\right)$
+\end_inset
+
+.
+ נראה מבחין )
 \lang english
 distinguisher
 \lang hebrew
@@ -710,7 +697,7 @@ distinguisher
 
  אי-זוגי.
  אחרת, אם 
-\begin_inset Formula $\left|c\right|=2n$
+\begin_inset Formula $\left|c\right|=2k$
 \end_inset
 
  אז 
@@ -768,11 +755,11 @@ distinguisher
 \noun default
 \color inherit
 אם"ם 
-\begin_inset Formula $c\left[1.\dots n\right]=c\left[n+1\dots2n\right]$
+\begin_inset Formula $c\left[0.\dots k-1\right]=c\left[k\dots2k-1\right]$
 \end_inset
 
 , כלומר אם 
-\begin_inset Formula $n$
+\begin_inset Formula $k$
 \end_inset
 
  הביטים הראשונים ב-
@@ -780,10 +767,10 @@ distinguisher
 \end_inset
 
  זהים ל-
-\begin_inset Formula $n$
+\begin_inset Formula $k$
 \end_inset
 
- הביטים האחרונים.
+ הביטים האחרונים בו.
 \end_layout
 
 \begin_layout Standard
@@ -800,7 +787,7 @@ distinguisher
 \end_inset
 
  מתקיים ש-
-\begin_inset Formula $n$
+\begin_inset Formula $\ell\left(n\right)$
 \end_inset
 
  הביטים הראשונים ב-
@@ -808,7 +795,7 @@ distinguisher
 \end_inset
 
  זהים ל-
-\begin_inset Formula $n$
+\begin_inset Formula $\ell\left(n\right)$
 \end_inset
 
  הביטים האחרונים, ולכן 
@@ -827,7 +814,7 @@ distinguisher
  לכן: 
 \begin_inset Formula 
 \[
-\left|\Pr\left[D\left(G\left(s\right)\right)=1\right]-\Pr\left[D\left(r\right)\right]=1\right|=\left|1-\left(\nicefrac{1}{2}\right)^{n}\right|=1-\left(\nicefrac{1}{2}\right)^{n}\text{ where }r\leftarrow\left\{ 0,1\right\} ^{2n}
+\left|\Pr_{s\leftarrow\left\{ 0,1\right\} ^{n}}\left[D\left(G\left(s\right)\right)=1\right]-\Pr_{r\leftarrow\left\{ 0,1\right\} ^{2\ell\left(n\right)}}\left[D\left(r\right)\right]=1\right|=\left|1-\left(\nicefrac{1}{2}\right)^{\ell\left(n\right)}\right|=1-\left(\nicefrac{1}{2}\right)^{\ell\left(n\right)}
 \]
 
 \end_inset
@@ -837,11 +824,11 @@ distinguisher
 \end_inset
 
  יהיה שווה לביט ה-
-\begin_inset Formula $n+i$
+\begin_inset Formula $\ell\left(n\right)+i$
 \end_inset
 
  לכל 
-\begin_inset Formula $0\le i<n$
+\begin_inset Formula $0\le i<\ell\left(n\right)$
 \end_inset
 
  הוא 
@@ -861,7 +848,7 @@ distinguisher
 \end_inset
 
  לכל 
-\begin_inset Formula $0\le i<j<n$
+\begin_inset Formula $0\le i<j<\ell\left(n\right)$
 \end_inset
 
 .
@@ -898,20 +885,6 @@ distinguisher
 \color inherit
 \lang english
 PRG
-\lang hebrew
-.
-\end_layout
-
-\begin_layout Subsection*
-סעיף ב'
-\end_layout
-
-\begin_layout Standard
-יהי 
-\begin_inset Formula $D$
-\end_inset
-
- 
 \family roman
 \series medium
 \shape up
@@ -923,7 +896,65 @@ PRG
 \uwave off
 \noun off
 \color none
-מבחין יעיל )
+\lang hebrew
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\bar default
+\strikeout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+כי ברור שהפונקציה 
+\begin_inset Formula $1-\left(\nicefrac{1}{2}\right)^{\ell\left(n\right)}$
+\end_inset
+
+ אינה זניחה )היא גדולה למשל מ-
+\begin_inset Formula $\nicefrac{1}{n}$
+\end_inset
+
+ עבור אינסוף 
+\begin_inset Formula $n$
+\end_inset
+
+(.
+\end_layout
+
+\begin_layout Subsection*
+סעיף ב'
+\end_layout
+
+\begin_layout Standard
+יהי 
+\begin_inset Formula $\ell\left(n\right)>n$
+\end_inset
+
+ כך ש-
+\begin_inset Formula $\left|G_{1}\left(s\right)\right|=\left|G_{2}\left(s\right)\right|=\ell\left(n\right)$
+\end_inset
+
+.
+ נניח בשלילה שקיים מבחין יעיל 
+\begin_inset Formula $D$
+\end_inset
+
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ )
 \family default
 \series default
 \shape default
@@ -938,16 +969,269 @@ PRG
 \lang english
 PPT
 \lang hebrew
-(.
- נגדיר: 
-\begin_inset Formula $\Neg=\Pr\left[D\left(G\left(s_{1}||s_{2}\right)\right)=1\right]-\frac{1}{2}=\Pr\left[D\left(G_{1}\left(s_{1}\right)||G_{2}\left(s_{2}\right)\right)=1\right]-\frac{1}{2}$
+( ופולימום 
+\begin_inset Formula $p\left(n\right)$
 \end_inset
 
- כאשר 
-\begin_inset Formula $\left|s_{1}\right|\in\left\{ \left|s_{2}\right|,\left|s_{2}\right|+1\right\} $
+ כך ש-: 
+\begin_inset Formula 
+\[
+\left|\Pr\left[D\left(G\left(U_{2n}\right)\right)=1\right]-\Pr\left[D\left(U_{2\ell\left(n\right)}\right)=1\right]\right|>\frac{2}{p\left(n\right)}
+\]
+
+\end_inset
+
+ עבור אינסוף ערכי 
+\begin_inset Formula $n$
 \end_inset
 
 .
+ לכן, לאינסוף 
+\begin_inset Formula $n$
+\end_inset
+
+: 
+\begin_inset Formula 
+\begin{align*}
+\frac{2}{p\left(n\right)} & <\left|\Pr_{s\leftarrow\left\{ 0,1\right\} ^{2n}}\left[D\left(G\left(s\right)\right)=1\right]-\Pr_{r\leftarrow\left\{ 0,1\right\} ^{2\ell\left(n\right)}}\left[D\left(r\right)=1\right]\right|\\
+ & =\left|\Pr_{s_{1},s_{2}\leftarrow\left\{ 0,1\right\} ^{n}}\left[D\left(G\left(s_{1}||s_{2}\right)\right)=1\right]-\Pr_{r_{1},r_{2}\leftarrow\left\{ 0,1\right\} ^{\ell\left(n\right)}}\left[D\left(r_{1}||r_{2}\right)=1\right]\right|\\
+ & =\left|\Pr_{s_{1},s_{2}\leftarrow\left\{ 0,1\right\} ^{n}}\left[D\left(G_{1}\left(s_{1}\right)||G_{2}\left(s_{2}\right)\right)=1\right]-\Pr_{r_{1},r_{2}\leftarrow\left\{ 0,1\right\} ^{\ell\left(n\right)}}\left[D\left(r_{1}||r_{2}\right)=1\right]\right|\\
+ & =\left|\Pr_{s_{1},s_{2}\leftarrow\left\{ 0,1\right\} ^{n}}\left[D\left(G_{1}\left(s_{1}\right)||G_{2}\left(s_{2}\right)\right)=1\right]-\Pr_{s_{1}\leftarrow\left\{ 0,1\right\} ^{n},r_{2}\leftarrow\left\{ 0,1\right\} ^{\ell\left(n\right)}}\left[D\left(G_{1}\left(s_{1}\right)||r_{2}\right)=1\right]\right.\\
+ & +\left.\Pr_{s_{1}\leftarrow\left\{ 0,1\right\} ^{n},r_{2}\leftarrow\left\{ 0,1\right\} ^{\ell\left(n\right)}}\left[D\left(G_{1}\left(s_{1}\right)||r_{2}\right)=1\right]-\Pr_{r_{1},r_{2}\leftarrow\left\{ 0,1\right\} ^{\ell\left(n\right)}}\left[D\left(r_{1}||r_{2}\right)=1\right]\right|\\
+ & \le\underbrace{\left|\Pr_{s_{1},s_{2}\leftarrow\left\{ 0,1\right\} ^{n}}\left[D\left(G_{1}\left(s_{1}\right)||G_{2}\left(s_{2}\right)\right)=1\right]-\Pr_{s_{1}\leftarrow\left\{ 0,1\right\} ^{n},r_{2}\leftarrow\left\{ 0,1\right\} ^{\ell\left(n\right)}}\left[D\left(G_{1}\left(s_{1}\right)||r_{2}\right)=1\right]\right|}_{A}\\
+ & +\underbrace{\left|\Pr_{s_{1}\leftarrow\left\{ 0,1\right\} ^{n},r_{2}\leftarrow\left\{ 0,1\right\} ^{\ell\left(n\right)}}\left[D\left(G_{1}\left(s_{1}\right)||r_{2}\right)=1\right]-\Pr_{r_{1},r_{2}\leftarrow\left\{ 0,1\right\} ^{\ell\left(n\right)}}\left[D\left(r_{1}||r_{2}\right)=1\right]\right|}_{B}
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+כאשר:
+\end_layout
+
+\begin_layout Enumerate
+לפי הגדרת 
+\begin_inset Formula $G$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Enumerate
+אי שוויון המשולש
+\end_layout
+
+\begin_layout Standard
+ולכן, מתקיים 
+\begin_inset Formula $A>\frac{2}{2p\left(n\right)}=\frac{1}{p\left(n\right)}$
+\end_inset
+
+ או ש-
+\begin_inset Formula $B>\frac{1}{p\left(n\right)}$
+\end_inset
+
+ לאינסוף ערכי 
+\begin_inset Formula $n$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+נניח שהראשון מתקיים.
+ נגדיר את 
+\begin_inset Formula $D_{2}$
+\end_inset
+
+ להיות מבחין יעיל ל-
+\begin_inset Formula $G_{2}$
+\end_inset
+
+ באופן הבא: עבור קלט 
+\begin_inset Formula $s$
+\end_inset
+
+, 
+\begin_inset Formula $D_{2}$
+\end_inset
+
+ ידגום 
+\begin_inset Formula $s_{1}\leftarrow\left\{ 0,1\right\} ^{\left|s\right|}$
+\end_inset
+
+ ויחזיר 
+\begin_inset Formula $D\left(G_{1}\left(s_{1}\right)||s\right)$
+\end_inset
+
+.
+ מכיוון ש-
+\begin_inset Formula $D$
+\end_inset
+
+ מבחין יעיל גם 
+\begin_inset Formula $D_{2}$
+\end_inset
+
+ יעיל.
+ נשים לב שעבור אינסוף 
+\begin_inset Formula $n$
+\end_inset
+
+ מתקיים: 
+\begin_inset Formula 
+\begin{align*}
+ & \left|\Pr_{s_{2}\leftarrow\left\{ 0,1\right\} ^{n}}\left[D_{2}\left(G_{2}\left(s_{2}\right)\right)=1\right]-\Pr_{r_{2}\leftarrow\left\{ 0,1\right\} ^{\ell\left(n\right)}}\left[D_{2}\left(r_{2}\right)=1\right]\right|\\
+= & \left|\Pr_{s_{1},s_{2}\leftarrow\left\{ 0,1\right\} ^{n}}\left[D\left(G_{1}\left(s_{1}\right)||G_{2}\left(s_{2}\right)\right)=1\right]-\Pr_{s_{1}\leftarrow\left\{ 0,1\right\} ^{n},r_{2}\leftarrow\left\{ 0,1\right\} ^{\ell\left(n\right)}}\left[D\left(G_{1}\left(s_{1}\right)||r_{2}\right)=1\right]\right|\\
+> & \frac{1}{p\left(n\right)}
+\end{align*}
+
+\end_inset
+
+מההנחה ש-
+\begin_inset Formula $A>\frac{1}{p\left(n\right)}$
+\end_inset
+
+, ובסתירה לכך ש-
+\begin_inset Formula $G_{2}$
+\end_inset
+
+ הוא
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\bar default
+\strikeout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+\lang english
+PRG
+\lang hebrew
+.
+\end_layout
+
+\begin_layout Standard
+באופן דומה, אם 
+\begin_inset Formula $B>\frac{1}{p\left(n\right)}$
+\end_inset
+
+ אז נבנה מבחין 
+\begin_inset Formula $D_{1}$
+\end_inset
+
+ שעבור קלט 
+\begin_inset Formula $s$
+\end_inset
+
+ דוגם 
+\begin_inset Formula $s_{2}\leftarrow\left\{ 0,1\right\} ^{\left|s\right|}$
+\end_inset
+
+ ומחזיר 
+\begin_inset Formula $D\left(s||G_{2}\left(s_{2}\right)\right)$
+\end_inset
+
+.
+ מחישוב דומה מתקבל: 
+\begin_inset Formula 
+\[
+\left|\Pr_{s_{1}\leftarrow\left\{ 0,1\right\} ^{n}}\left[D_{1}\left(G_{1}\left(s_{1}\right)\right)=1\right]-\Pr_{r_{1}\leftarrow\left\{ 0,1\right\} ^{\ell\left(n\right)}}\left[D_{1}\left(r_{1}\right)=1\right]\right|>\frac{1}{p\left(n\right)}
+\]
+
+\end_inset
+
+עבור אינסוף 
+\begin_inset Formula $n$
+\end_inset
+
+, בסתירה ל-
+\lang english
+PRG
+\lang hebrew
+יות של 
+\begin_inset Formula $G_{1}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+לכן, לא קיים מבחין 
+\begin_inset Formula $D$
+\end_inset
+
+ כנ"ל ו-
+\begin_inset Formula $G$
+\end_inset
+
+ הוא
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\bar default
+\strikeout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+\lang english
+PRG
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+\lang hebrew
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\bar default
+\strikeout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+כנדרש.
 \end_layout
 
 \begin_layout Section*
@@ -977,6 +1261,198 @@ PPT
 \noun default
 \color inherit
 5
+\end_layout
+
+\begin_layout Standard
+נגדיר את 
+\begin_inset Formula $H$
+\end_inset
+
+ כך: 
+\begin_inset Formula 
+\[
+H\left(s\right)=\begin{cases}
+G\left(s\right), & s\neq0^{n}\\
+0^{2n}, & s=0^{n}
+\end{cases}
+\]
+
+\end_inset
+
+ונטען ש-
+\begin_inset Formula $H$
+\end_inset
+
+ הוא
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\bar default
+\strikeout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+\lang english
+PRG
+\lang hebrew
+.
+ נניח בשלילה שלא, כלומר שקיים מבחין 
+\begin_inset Formula $D$
+\end_inset
+
+ כך ש-: 
+\begin_inset Formula 
+\[
+\left|\Pr\left[D\left(H\left(U_{n}\right)\right)=1\right]-\Pr\left[D\left(U_{2n}\right)=1\right]\right|>\frac{1}{p\left(n\right)}
+\]
+
+\end_inset
+
+עבור אינסוף 
+\begin_inset Formula $n$
+\end_inset
+
+ ופולינום 
+\begin_inset Formula $p\left(n\right)$
+\end_inset
+
+ כלשהו.
+ מכאן ש-
+\begin_inset Formula $\left(*\right):\,\Pr\left[D\left(H\left(U_{n}\right)\right)=1\right]>\Pr\left[D\left(U_{2n}\right)=1\right]+\frac{1}{p\left(n\right)}$
+\end_inset
+
+ עבור אינסוף 
+\begin_inset Formula $n$
+\end_inset
+
+.
+ לכן: 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{align*}
+\Pr\left[D\left(H\left(U_{n}\right)\right)=1\right] & =\Prc{D\left(H\left(U_{n}\right)\right)=1}{U_{n}=0^{n}}\Pr\left[U_{n}=0^{n}\right]\\
+ & +\Prc{D\left(H\left(U_{n}\right)\right)=1}{U_{n}\neq0^{n}}\Pr\left[U_{n}\neq0^{n}\right]\\
+ & =\overbrace{\Pr\left[D\left(H\left(0^{n}\right)\right)=1\right]}^{q}\cdot2^{-n}+\Pr\left[D\left(G\left(U_{n}\right)\right)=1\right]\cdot\left(1-2^{-n}\right)\\
+ & =q\cdot2^{-n}+\Pr\left[D\left(G\left(U_{n}\right)\right)=1\right]-\overbrace{\Pr\left[D\left(G\left(U_{n}\right)\right)=1\right]}^{r}\cdot2^{-n}\\
+ & =\left(q-r\right)2^{-n}+\Pr\left[D\left(G\left(U_{n}\right)\right)=1\right]\overset{\left(*\right)}{>}\Pr\left[D\left(U_{2n}\right)=1\right]+\frac{1}{p\left(n\right)}
+\end{align*}
+
+\end_inset
+
+נעביר אגפים ונקבל: 
+\begin_inset Formula 
+\begin{align*}
+\left|\Pr\left[D\left(G\left(U_{n}\right)\right)=1\right]-\Pr\left[D\left(U_{2n}\right)=1\right]\right| & \ge\Pr\left[D\left(G\left(U_{n}\right)\right)=1\right]-\Pr\left[D\left(U_{2n}\right)=1\right]\\
+ & >\left(r-q\right)2^{-n}+\frac{1}{p\left(n\right)}
+\end{align*}
+
+\end_inset
+
+כאשר הא"ש הראשון נובע מתכונות הערך המוחלט והא"ש השני נובע מהחישוב לעיל.
+ 
+\end_layout
+
+\begin_layout Standard
+נטען ש-
+\begin_inset Formula $\left(r-q\right)2^{-n}+\frac{1}{p\left(n\right)}$
+\end_inset
+
+ אינה זניחה ובכך נקבל ש-
+\begin_inset Formula $D$
+\end_inset
+
+ מבחין יעיל ל-
+\begin_inset Formula $G$
+\end_inset
+
+ בסתירה לכך ש-
+\begin_inset Formula $G$
+\end_inset
+
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\bar default
+\strikeout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+\lang english
+PRG
+\lang hebrew
+.
+\end_layout
+
+\begin_layout Standard
+מכיוון ש-
+\begin_inset Formula $\left(r-q\right)2^{-n}$
+\end_inset
+
+ זניחה )כי 
+\begin_inset Formula $r-q$
+\end_inset
+
+ חסומה ב-
+\begin_inset Formula $\pm1$
+\end_inset
+
+ ו-
+\begin_inset Formula $2^{-n}$
+\end_inset
+
+ זניחה(, קיים 
+\begin_inset Formula $n_{0}$
+\end_inset
+
+ כך שלכל 
+\begin_inset Formula $n>n_{0}$
+\end_inset
+
+ מתקיים: 
+\begin_inset Formula 
+\begin{align*}
+ & \left|\left(r-q\right)2^{-n}\right|<\frac{1}{2p\left(n\right)}\\
+\iff & -\left|\left(r-q\right)2^{-n}\right|>-\frac{1}{2p\left(n\right)}\\
+\iff & \frac{1}{p\left(n\right)}-\left|\left(r-q\right)2^{-n}\right|>\frac{1}{2p\left(n\right)}\\
+\implies & \frac{1}{p\left(n\right)}+\left(r-q\right)2^{-n}\ge\frac{1}{p\left(n\right)}-\left|\left(r-q\right)2^{-n}\right|>\frac{1}{2p\left(n\right)}
+\end{align*}
+
+\end_inset
+
+כלומר הפונ' אינה זניחה כנדרש.
 \end_layout
 
 \begin_layout Section*
