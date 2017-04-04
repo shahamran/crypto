@@ -1,0 +1,4216 @@
+#LyX 2.2 created this file. For more info see http://www.lyx.org/
+\lyxformat 508
+\begin_document
+\begin_header
+\save_transient_properties true
+\origin unavailable
+\textclass heb-article
+\use_default_options true
+\maintain_unincluded_children false
+\language hebrew
+\language_package default
+\inputencoding auto
+\fontencoding global
+\font_roman "default" "default"
+\font_sans "default" "default"
+\font_typewriter "default" "default"
+\font_math "auto" "auto"
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100 100
+\font_tt_scale 100 100
+\graphics default
+\default_output_format default
+\output_sync 1
+\bibtex_command default
+\index_command default
+\paperfontsize default
+\spacing single
+\use_hyperref false
+\papersize default
+\use_geometry true
+\use_package amsmath 1
+\use_package amssymb 1
+\use_package cancel 1
+\use_package esint 1
+\use_package mathdots 1
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification false
+\use_refstyle 1
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\leftmargin 1.5cm
+\topmargin 1.5cm
+\rightmargin 1.5cm
+\bottommargin 1.5cm
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation skip
+\defskip smallskip
+\quotes_language english
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Standard
+\begin_inset FormulaMacro
+\newcommand{\ME}{{\cal M}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\KE}{{\cal K}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\Prc}[2]{\Pr\left[#1\middle|#2\right]}
+{\Pr\left[#1\mid#2\right]}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\CY}{{\cal C}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\Ad}{{\cal A}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\Neg}{\nu\left(n\right)}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\ind}{\Pr\left[\text{IND}_{\Pi,\Ad}\left(n\right)=1\right]}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\func}[1]{\text{Func}_{#1}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\ot}{\leftarrow}
+\end_inset
+
+
+\end_layout
+
+\begin_layout Title
+מבוא לקריפטוגרפיה ואבטחת תוכנה
+\begin_inset Newline newline
+\end_inset
+
+תרגיל
+\family roman
+\series medium
+\shape up
+\size largest
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\numeric on
+\bar default
+\strikeout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+1
+\end_layout
+
+\begin_layout Author
+רן שחם -
+\family roman
+\series medium
+\shape up
+\size large
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\numeric on
+\bar default
+\strikeout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+203781000
+\end_layout
+
+\begin_layout Remarks
+לאורך התרגיל אני מסמן ב-
+\begin_inset Formula $U_{n}$
+\end_inset
+
+ איבר מההתפלגות האחידה על 
+\begin_inset Formula $\left\{ 0,1\right\} ^{n}$
+\end_inset
+
+.
+ למשל: 
+\begin_inset Formula 
+\[
+\Pr\left[D\left(U_{n}\right)=1\right]=\Pr_{s\leftarrow\left\{ 0,1\right\} ^{n}}\left[D\left(s\right)=1\right]
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section*
+שאלה
+\family roman
+\series bold
+\shape up
+\size larger
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\numeric on
+\bar default
+\strikeout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+4
+\end_layout
+
+\begin_layout Subsection*
+סעיף א'
+\end_layout
+
+\begin_layout Standard
+נניח ש-
+\begin_inset Formula $G_{1},G_{2}$
+\end_inset
+
+ הם
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\bar default
+\strikeout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+\lang english
+PRG
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+\lang hebrew
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\bar default
+\strikeout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+כך ש-
+\begin_inset Formula $G_{1}=G_{2}$
+\end_inset
+
+.
+ אזי 
+\begin_inset Formula $G$
+\end_inset
+
+ המוגדר כבשאלה אינו
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\bar default
+\strikeout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+\lang english
+PRG
+\lang hebrew
+.
+\end_layout
+
+\begin_layout Standard
+יהי 
+\begin_inset Formula $\ell\left(n\right)>n$
+\end_inset
+
+ פולינום כך ש-
+\begin_inset Formula $\left|G_{1}\left(s\right)\right|=\ell\left(\left|s\right|\right)$
+\end_inset
+
+.
+ נראה מבחין )
+\lang english
+distinguisher
+\lang hebrew
+( יעיל שמבדיל בין פלט של 
+\begin_inset Formula $G$
+\end_inset
+
+ לבין פלט אקראי בסיכוי לא זניח.
+ נגדיר את 
+\begin_inset Formula $D\left(c\right)$
+\end_inset
+
+ להחזיר 
+\begin_inset Formula $0$
+\end_inset
+
+ אם 
+\begin_inset Formula $\left|c\right|$
+\end_inset
+
+ אי-זוגי.
+ אחרת, אם 
+\begin_inset Formula $\left|c\right|=2k$
+\end_inset
+
+ אז 
+\begin_inset Formula $D$
+\end_inset
+
+ יחזיר
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\numeric on
+\bar default
+\strikeout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+1
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\numeric off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\bar default
+\strikeout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+אם"ם 
+\begin_inset Formula $c\left[0.\dots k-1\right]=c\left[k\dots2k-1\right]$
+\end_inset
+
+, כלומר אם 
+\begin_inset Formula $k$
+\end_inset
+
+ הביטים הראשונים ב-
+\begin_inset Formula $c$
+\end_inset
+
+ זהים ל-
+\begin_inset Formula $k$
+\end_inset
+
+ הביטים האחרונים בו.
+\end_layout
+
+\begin_layout Standard
+אם כך, לכל קלט 
+\begin_inset Formula $s$
+\end_inset
+
+ בעל 
+\begin_inset Formula $n$
+\end_inset
+
+ ביטים כך ש-
+\begin_inset Formula $c=G\left(s\right)=G_{1}\left(s\right)||G_{2}\left(s\right)=G_{1}\left(s\right)||G_{1}\left(s\right)$
+\end_inset
+
+ מתקיים ש-
+\begin_inset Formula $\ell\left(n\right)$
+\end_inset
+
+ הביטים הראשונים ב-
+\begin_inset Formula $c$
+\end_inset
+
+ זהים ל-
+\begin_inset Formula $\ell\left(n\right)$
+\end_inset
+
+ הביטים האחרונים, ולכן 
+\begin_inset Formula $D$
+\end_inset
+
+ על 
+\begin_inset Formula $c$
+\end_inset
+
+ יחזיר 
+\begin_inset Formula $1$
+\end_inset
+
+ )תמיד(.
+ לכן: 
+\begin_inset Formula 
+\[
+\left|\Pr_{s\leftarrow\left\{ 0,1\right\} ^{n}}\left[D\left(G\left(s\right)\right)=1\right]-\Pr_{r\leftarrow\left\{ 0,1\right\} ^{2\ell\left(n\right)}}\left[D\left(r\right)\right]=1\right|=\left|1-\left(\nicefrac{1}{2}\right)^{\ell\left(n\right)}\right|=1-\left(\nicefrac{1}{2}\right)^{\ell\left(n\right)}
+\]
+
+\end_inset
+
+כי הסיכוי שהביט ה-
+\begin_inset Formula $i$
+\end_inset
+
+ יהיה שווה לביט ה-
+\begin_inset Formula $\ell\left(n\right)+i$
+\end_inset
+
+ לכל 
+\begin_inset Formula $0\le i<\ell\left(n\right)$
+\end_inset
+
+ הוא 
+\begin_inset Formula $\nicefrac{1}{2}$
+\end_inset
+
+, והביט ה-
+\begin_inset Formula $i$
+\end_inset
+
+ ב"ת בביט ה-
+\begin_inset Formula $j$
+\end_inset
+
+ לכל 
+\begin_inset Formula $0\le i<j<\ell\left(n\right)$
+\end_inset
+
+ )מכיוון שההתפלגות בה נבחר 
+\begin_inset Formula $r$
+\end_inset
+
+ היא אחידה(.
+\end_layout
+
+\begin_layout Standard
+לכן, לפי הגדרה, 
+\begin_inset Formula $G$
+\end_inset
+
+ אינו
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\bar default
+\strikeout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+\lang english
+PRG
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+\lang hebrew
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\bar default
+\strikeout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+כי ברור שהפונקציה 
+\begin_inset Formula $1-\left(\nicefrac{1}{2}\right)^{\ell\left(n\right)}$
+\end_inset
+
+ אינה זניחה )היא גדולה למשל מ-
+\begin_inset Formula $\nicefrac{1}{n}$
+\end_inset
+
+ עבור אינסוף 
+\begin_inset Formula $n$
+\end_inset
+
+(.
+\end_layout
+
+\begin_layout Subsection*
+סעיף ב'
+\end_layout
+
+\begin_layout Standard
+יהי 
+\begin_inset Formula $\ell\left(n\right)>n$
+\end_inset
+
+ כך ש-
+\begin_inset Formula $\left|G_{1}\left(s\right)\right|=\left|G_{2}\left(s\right)\right|=\ell\left(n\right)$
+\end_inset
+
+.
+ נניח בשלילה שקיים מבחין יעיל 
+\begin_inset Formula $D$
+\end_inset
+
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ )
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\bar default
+\strikeout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+\lang english
+PPT
+\lang hebrew
+( ופולינום 
+\begin_inset Formula $p\left(n\right)$
+\end_inset
+
+ כך ש-: 
+\begin_inset Formula 
+\[
+\left|\Pr\left[D\left(G\left(U_{2n}\right)\right)=1\right]-\Pr\left[D\left(U_{2\ell\left(n\right)}\right)=1\right]\right|>\frac{2}{p\left(n\right)}
+\]
+
+\end_inset
+
+ עבור אינסוף ערכי 
+\begin_inset Formula $n$
+\end_inset
+
+.
+ לכן, לאינסוף 
+\begin_inset Formula $n$
+\end_inset
+
+: 
+\begin_inset Formula 
+\begin{align*}
+\frac{2}{p\left(n\right)} & <\left|\Pr_{s\leftarrow\left\{ 0,1\right\} ^{2n}}\left[D\left(G\left(s\right)\right)=1\right]-\Pr_{r\leftarrow\left\{ 0,1\right\} ^{2\ell\left(n\right)}}\left[D\left(r\right)=1\right]\right|\\
+ & =\left|\Pr_{s_{1},s_{2}\leftarrow\left\{ 0,1\right\} ^{n}}\left[D\left(G\left(s_{1}||s_{2}\right)\right)=1\right]-\Pr_{r_{1},r_{2}\leftarrow\left\{ 0,1\right\} ^{\ell\left(n\right)}}\left[D\left(r_{1}||r_{2}\right)=1\right]\right|\\
+ & \overset{1}{=}\left|\Pr_{s_{1},s_{2}\leftarrow\left\{ 0,1\right\} ^{n}}\left[D\left(G_{1}\left(s_{1}\right)||G_{2}\left(s_{2}\right)\right)=1\right]-\Pr_{r_{1},r_{2}\leftarrow\left\{ 0,1\right\} ^{\ell\left(n\right)}}\left[D\left(r_{1}||r_{2}\right)=1\right]\right|\\
+ & =\left|\Pr_{s_{1},s_{2}\leftarrow\left\{ 0,1\right\} ^{n}}\left[D\left(G_{1}\left(s_{1}\right)||G_{2}\left(s_{2}\right)\right)=1\right]-\Pr_{s_{1}\leftarrow\left\{ 0,1\right\} ^{n},r_{2}\leftarrow\left\{ 0,1\right\} ^{\ell\left(n\right)}}\left[D\left(G_{1}\left(s_{1}\right)||r_{2}\right)=1\right]\right.\\
+ & +\left.\Pr_{s_{1}\leftarrow\left\{ 0,1\right\} ^{n},r_{2}\leftarrow\left\{ 0,1\right\} ^{\ell\left(n\right)}}\left[D\left(G_{1}\left(s_{1}\right)||r_{2}\right)=1\right]-\Pr_{r_{1},r_{2}\leftarrow\left\{ 0,1\right\} ^{\ell\left(n\right)}}\left[D\left(r_{1}||r_{2}\right)=1\right]\right|\\
+ & \overset{2}{\le}\underbrace{\left|\Pr_{s_{1},s_{2}\leftarrow\left\{ 0,1\right\} ^{n}}\left[D\left(G_{1}\left(s_{1}\right)||G_{2}\left(s_{2}\right)\right)=1\right]-\Pr_{s_{1}\leftarrow\left\{ 0,1\right\} ^{n},r_{2}\leftarrow\left\{ 0,1\right\} ^{\ell\left(n\right)}}\left[D\left(G_{1}\left(s_{1}\right)||r_{2}\right)=1\right]\right|}_{A}\\
+ & +\underbrace{\left|\Pr_{s_{1}\leftarrow\left\{ 0,1\right\} ^{n},r_{2}\leftarrow\left\{ 0,1\right\} ^{\ell\left(n\right)}}\left[D\left(G_{1}\left(s_{1}\right)||r_{2}\right)=1\right]-\Pr_{r_{1},r_{2}\leftarrow\left\{ 0,1\right\} ^{\ell\left(n\right)}}\left[D\left(r_{1}||r_{2}\right)=1\right]\right|}_{B}
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+כאשר:
+\end_layout
+
+\begin_layout Enumerate
+לפי הגדרת 
+\begin_inset Formula $G$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Enumerate
+אי שוויון המשולש
+\end_layout
+
+\begin_layout Standard
+ולכן, מתקיים 
+\begin_inset Formula $A>\frac{2}{2p\left(n\right)}=\frac{1}{p\left(n\right)}$
+\end_inset
+
+ או ש-
+\begin_inset Formula $B>\frac{1}{p\left(n\right)}$
+\end_inset
+
+ לאינסוף ערכי 
+\begin_inset Formula $n$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+נניח שהראשון מתקיים.
+ נגדיר את 
+\begin_inset Formula $D_{2}$
+\end_inset
+
+ להיות מבחין יעיל ל-
+\begin_inset Formula $G_{2}$
+\end_inset
+
+ באופן הבא: עבור קלט 
+\begin_inset Formula $s$
+\end_inset
+
+, 
+\begin_inset Formula $D_{2}$
+\end_inset
+
+ ידגום 
+\begin_inset Formula $s_{1}\leftarrow\left\{ 0,1\right\} ^{\left|s\right|}$
+\end_inset
+
+ ויחזיר 
+\begin_inset Formula $D\left(G_{1}\left(s_{1}\right)||s\right)$
+\end_inset
+
+.
+ מכיוון ש-
+\begin_inset Formula $D$
+\end_inset
+
+ מבחין יעיל גם 
+\begin_inset Formula $D_{2}$
+\end_inset
+
+ יעיל.
+ נשים לב שעבור אינסוף 
+\begin_inset Formula $n$
+\end_inset
+
+ מתקיים: 
+\begin_inset Formula 
+\begin{align*}
+ & \left|\Pr_{s_{2}\leftarrow\left\{ 0,1\right\} ^{n}}\left[D_{2}\left(G_{2}\left(s_{2}\right)\right)=1\right]-\Pr_{r_{2}\leftarrow\left\{ 0,1\right\} ^{\ell\left(n\right)}}\left[D_{2}\left(r_{2}\right)=1\right]\right|\\
+= & \left|\Pr_{s_{1},s_{2}\leftarrow\left\{ 0,1\right\} ^{n}}\left[D\left(G_{1}\left(s_{1}\right)||G_{2}\left(s_{2}\right)\right)=1\right]-\Pr_{s_{1}\leftarrow\left\{ 0,1\right\} ^{n},r_{2}\leftarrow\left\{ 0,1\right\} ^{\ell\left(n\right)}}\left[D\left(G_{1}\left(s_{1}\right)||r_{2}\right)=1\right]\right|\\
+> & \frac{1}{p\left(n\right)}
+\end{align*}
+
+\end_inset
+
+מההנחה ש-
+\begin_inset Formula $A>\frac{1}{p\left(n\right)}$
+\end_inset
+
+, ובסתירה לכך ש-
+\begin_inset Formula $G_{2}$
+\end_inset
+
+ הוא
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\bar default
+\strikeout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+\lang english
+PRG
+\lang hebrew
+.
+\end_layout
+
+\begin_layout Standard
+באופן דומה, אם 
+\begin_inset Formula $B>\frac{1}{p\left(n\right)}$
+\end_inset
+
+ אז נבנה מבחין 
+\begin_inset Formula $D_{1}$
+\end_inset
+
+ שעבור קלט 
+\begin_inset Formula $s$
+\end_inset
+
+ דוגם 
+\begin_inset Formula $s_{2}\leftarrow\left\{ 0,1\right\} ^{\left|s\right|}$
+\end_inset
+
+ ומחזיר 
+\begin_inset Formula $D\left(s||G_{2}\left(s_{2}\right)\right)$
+\end_inset
+
+.
+ מחישוב דומה מתקבל: 
+\begin_inset Formula 
+\[
+\left|\Pr_{s_{1}\leftarrow\left\{ 0,1\right\} ^{n}}\left[D_{1}\left(G_{1}\left(s_{1}\right)\right)=1\right]-\Pr_{r_{1}\leftarrow\left\{ 0,1\right\} ^{\ell\left(n\right)}}\left[D_{1}\left(r_{1}\right)=1\right]\right|>\frac{1}{p\left(n\right)}
+\]
+
+\end_inset
+
+עבור אינסוף 
+\begin_inset Formula $n$
+\end_inset
+
+, בסתירה ל-
+\lang english
+PRG
+\lang hebrew
+יות של 
+\begin_inset Formula $G_{1}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+לכן, לא קיים מבחין 
+\begin_inset Formula $D$
+\end_inset
+
+ כנ"ל ו-
+\begin_inset Formula $G$
+\end_inset
+
+ הוא
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\bar default
+\strikeout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+\lang english
+PRG
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+\lang hebrew
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\bar default
+\strikeout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+כנדרש.
+\end_layout
+
+\begin_layout Section*
+שאלה
+\family roman
+\series bold
+\shape up
+\size larger
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\numeric on
+\bar default
+\strikeout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+5
+\end_layout
+
+\begin_layout Standard
+נגדיר את 
+\begin_inset Formula $H$
+\end_inset
+
+ כך: 
+\begin_inset Formula 
+\[
+H\left(s\right)=\begin{cases}
+G\left(s\right), & s\neq0^{n}\\
+0^{2n}, & s=0^{n}
+\end{cases}
+\]
+
+\end_inset
+
+ונטען ש-
+\begin_inset Formula $H$
+\end_inset
+
+ הוא
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\bar default
+\strikeout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+\lang english
+PRG
+\lang hebrew
+.
+ נניח בשלילה שלא, כלומר שקיים מבחין 
+\begin_inset Formula $D$
+\end_inset
+
+ כך ש-: 
+\begin_inset Formula 
+\[
+\left|\Pr\left[D\left(H\left(U_{n}\right)\right)=1\right]-\Pr\left[D\left(U_{2n}\right)=1\right]\right|>\frac{1}{p\left(n\right)}
+\]
+
+\end_inset
+
+עבור אינסוף 
+\begin_inset Formula $n$
+\end_inset
+
+ ופולינום 
+\begin_inset Formula $p\left(n\right)$
+\end_inset
+
+ כלשהו.
+ מכאן ש-
+\begin_inset Formula $\left(*\right):\,\Pr\left[D\left(H\left(U_{n}\right)\right)=1\right]>\Pr\left[D\left(U_{2n}\right)=1\right]+\frac{1}{p\left(n\right)}$
+\end_inset
+
+ עבור אינסוף 
+\begin_inset Formula $n$
+\end_inset
+
+.
+ לכן: 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{align*}
+\Pr\left[D\left(H\left(U_{n}\right)\right)=1\right] & =\Prc{D\left(H\left(U_{n}\right)\right)=1}{U_{n}=0^{n}}\Pr\left[U_{n}=0^{n}\right]\\
+ & +\Prc{D\left(H\left(U_{n}\right)\right)=1}{U_{n}\neq0^{n}}\Pr\left[U_{n}\neq0^{n}\right]\\
+ & =\overbrace{\Pr\left[D\left(H\left(0^{n}\right)\right)=1\right]}^{q}\cdot2^{-n}+\Pr\left[D\left(G\left(U_{n}\right)\right)=1\right]\cdot\left(1-2^{-n}\right)\\
+ & =q\cdot2^{-n}+\Pr\left[D\left(G\left(U_{n}\right)\right)=1\right]-\overbrace{\Pr\left[D\left(G\left(U_{n}\right)\right)=1\right]}^{r}\cdot2^{-n}\\
+ & =\left(q-r\right)2^{-n}+\Pr\left[D\left(G\left(U_{n}\right)\right)=1\right]\overset{\left(*\right)}{>}\Pr\left[D\left(U_{2n}\right)=1\right]+\frac{1}{p\left(n\right)}
+\end{align*}
+
+\end_inset
+
+נעביר אגפים ונקבל: 
+\begin_inset Formula 
+\begin{align*}
+\left|\Pr\left[D\left(G\left(U_{n}\right)\right)=1\right]-\Pr\left[D\left(U_{2n}\right)=1\right]\right| & \ge\Pr\left[D\left(G\left(U_{n}\right)\right)=1\right]-\Pr\left[D\left(U_{2n}\right)=1\right]\\
+ & >\left(r-q\right)2^{-n}+\frac{1}{p\left(n\right)}
+\end{align*}
+
+\end_inset
+
+כאשר הא"ש הראשון נובע מתכונות הערך המוחלט והא"ש השני נובע מהחישוב לעיל.
+ 
+\end_layout
+
+\begin_layout Standard
+נטען ש-
+\begin_inset Formula $\left(r-q\right)2^{-n}+\frac{1}{p\left(n\right)}$
+\end_inset
+
+ אינה זניחה ובכך נקבל ש-
+\begin_inset Formula $D$
+\end_inset
+
+ מבחין יעיל ל-
+\begin_inset Formula $G$
+\end_inset
+
+ בסתירה לכך ש-
+\begin_inset Formula $G$
+\end_inset
+
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\bar default
+\strikeout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+\lang english
+PRG
+\lang hebrew
+.
+\end_layout
+
+\begin_layout Standard
+מכיוון ש-
+\begin_inset Formula $\left(r-q\right)2^{-n}$
+\end_inset
+
+ זניחה )כי 
+\begin_inset Formula $r-q$
+\end_inset
+
+ חסומה ב-
+\begin_inset Formula $\pm1$
+\end_inset
+
+ ו-
+\begin_inset Formula $2^{-n}$
+\end_inset
+
+ זניחה(, קיים 
+\begin_inset Formula $n_{0}$
+\end_inset
+
+ כך שלכל 
+\begin_inset Formula $n>n_{0}$
+\end_inset
+
+ מתקיים: 
+\begin_inset Formula 
+\begin{align*}
+ & \left|\left(r-q\right)2^{-n}\right|<\frac{1}{2p\left(n\right)}\\
+\iff & -\left|\left(r-q\right)2^{-n}\right|>-\frac{1}{2p\left(n\right)}\\
+\iff & \frac{1}{p\left(n\right)}-\left|\left(r-q\right)2^{-n}\right|>\frac{1}{2p\left(n\right)}\\
+\implies & \frac{1}{p\left(n\right)}+\left(r-q\right)2^{-n}\ge\frac{1}{p\left(n\right)}-\left|\left(r-q\right)2^{-n}\right|>\frac{1}{2p\left(n\right)}
+\end{align*}
+
+\end_inset
+
+כלומר הפונ' אינה זניחה כנדרש.
+\end_layout
+
+\begin_layout Section*
+שאלה
+\family roman
+\series bold
+\shape up
+\size larger
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\numeric on
+\bar default
+\strikeout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+6
+\end_layout
+
+\begin_layout Standard
+נשים לב ש-
+\begin_inset Formula $G$
+\end_inset
+
+ מקיים את תכונת ההרחבה )כלומר, מחזיר פלט עם יותר ביטים מאשר בקלט(, כי גם
+ אם הפלט של 
+\begin_inset Formula $F$
+\end_inset
+
+ הוא באורך ביט אחד, 
+\begin_inset Formula $G$
+\end_inset
+
+ מוגדר על ידי שרשור של 
+\begin_inset Formula $n+1$
+\end_inset
+
+ כאלה, עבור קלט באורך 
+\begin_inset Formula $n$
+\end_inset
+
+ ביטים.
+ נניח שהפלט של 
+\begin_inset Formula $F$
+\end_inset
+
+ הוא באורך ביט אחד )לשם פשטות.
+ שאר הניתוח לא משתנה מהותית עבור כל ערך אחר(.
+\end_layout
+
+\begin_layout Standard
+נניח בשלילה ש-
+\begin_inset Formula $D$
+\end_inset
+
+ מבחין יעיל ל-
+\begin_inset Formula $G$
+\end_inset
+
+ )כלומר 
+\begin_inset Formula $G$
+\end_inset
+
+ אינו
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\bar default
+\strikeout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+\lang english
+PRG
+\lang hebrew
+(, כלומר מתקיים: 
+\begin_inset Formula 
+\[
+\left|\Pr_{s\leftarrow\left\{ 0,1\right\} ^{n}}\left[D\left(G\left(s\right)\right)=1\right]-\Pr_{r\leftarrow\left\{ 0,1\right\} ^{n+1}}\left[D\left(r\right)=1\right]\right|>\frac{1}{p\left(n\right)}
+\]
+
+\end_inset
+
+עבור פולינום 
+\begin_inset Formula $p$
+\end_inset
+
+ כלשהו, לאינסוף 
+\begin_inset Formula $n$
+\end_inset
+
+.
+ נבנה מבחין יעיל ל-
+\begin_inset Formula $F$
+\end_inset
+
+.
+ בהינתן קלט 
+\begin_inset Formula $1^{n}$
+\end_inset
+
+ וגישת אורקל לפונקצייה 
+\begin_inset Formula ${\cal O}$
+\end_inset
+
+, המבחין יחשב את: 
+\begin_inset Formula 
+\[
+x={\cal O}\left(1\right)||{\cal O}\left(2\right)||\cdots||{\cal O}\left(n+1\right)
+\]
+
+\end_inset
+
+לאחר מכן, יחשב את 
+\begin_inset Formula $D\left(x\right)$
+\end_inset
+
+ ויענה כמוהו.
+ נשים לב: 
+\end_layout
+
+\begin_layout Enumerate
+\begin_inset Formula $D^{{\cal O}\left(\cdot\right)}$
+\end_inset
+
+ יעיל כי 
+\begin_inset Formula $D$
+\end_inset
+
+ יעיל וכי יש מספר לינארי ב-
+\begin_inset Formula $n$
+\end_inset
+
+ של קריאות לאורקל
+\end_layout
+
+\begin_layout Enumerate
+אם 
+\begin_inset Formula ${\cal O}\equiv F_{s}$
+\end_inset
+
+ אז 
+\begin_inset Formula $x=G\left(s\right)$
+\end_inset
+
+ לכל 
+\begin_inset Formula $s$
+\end_inset
+
+, לפי הגדרה
+\end_layout
+
+\begin_layout Enumerate
+אם 
+\begin_inset Formula ${\cal O}\equiv f$
+\end_inset
+
+ כאשר 
+\begin_inset Formula $f\leftarrow\text{Func}_{1}$
+\end_inset
+
+ )כאשר 
+\begin_inset Formula $\text{Func}_{1}=\left\{ g:\left\{ 0,1\right\} ^{*}\to\left\{ 0,1\right\} \right\} $
+\end_inset
+
+( אז 
+\begin_inset Formula $x$
+\end_inset
+
+ שקול לערך הנבחר מהתפלגות אחידה על מחרוזות באורך 
+\begin_inset Formula $n+1$
+\end_inset
+
+ ביטים - כי כל ביט בו נבחר באקראי 
+\end_layout
+
+\begin_layout Standard
+לכן: 
+\begin_inset Formula 
+\begin{align*}
+ & \left|\Pr_{s\leftarrow\left\{ 0,1\right\} ^{n}}\left[D^{F_{s}\left(\cdot\right)}\left(1^{n}\right)=1\right]-\Pr_{f\leftarrow\text{Func}_{1}}\left[D^{f\left(\cdot\right)}\left(1^{n}\right)\right]=1\right|\\
+= & \left|\Pr_{s\leftarrow\left\{ 0,1\right\} ^{n}}\left[D\left(G\left(s\right)\right)=1\right]-\Pr_{r\leftarrow\left\{ 0,1\right\} ^{n+1}}\left[D\left(r\right)=1\right]\right|>\frac{1}{p\left(n\right)}
+\end{align*}
+
+\end_inset
+
+עבור אינסוף 
+\begin_inset Formula $n$
+\end_inset
+
+, לפי הנחת השלילה.
+ זו סתירה לכך ש-
+\begin_inset Formula $F$
+\end_inset
+
+ היא
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\bar default
+\strikeout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+\lang english
+PRF
+\lang hebrew
+, ולכן 
+\begin_inset Formula $D$
+\end_inset
+
+ כנ"ל לא קיים - כלומר 
+\begin_inset Formula $G$
+\end_inset
+
+ הוא
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\bar default
+\strikeout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+\lang english
+PRG
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+\lang hebrew
+ כרצוי.
+\end_layout
+
+\begin_layout Section*
+שאלה
+\family roman
+\series bold
+\shape up
+\size larger
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\numeric on
+\bar default
+\strikeout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+7
+\end_layout
+
+\begin_layout Standard
+בשני הסעיפים נניח כמובן ש-
+\begin_inset Formula $F$
+\end_inset
+
+ היא
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\bar default
+\strikeout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+\lang english
+PRF
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+\lang hebrew
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\bar default
+\strikeout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+כמתואר בשאלה.
+\end_layout
+
+\begin_layout Subsection*
+סעיף
+\family roman
+\series bold
+\shape up
+\size large
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\numeric on
+\bar default
+\strikeout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+1
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $P$
+\end_inset
+
+ לא
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\bar default
+\strikeout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+\lang english
+PRF
+\lang hebrew
+.
+ מבחין יעיל 
+\begin_inset Formula $D$
+\end_inset
+
+ יפעל באופן הבא: עבור הקלט 
+\begin_inset Formula $1^{n}$
+\end_inset
+
+ וגישת אורקל לפונ' 
+\begin_inset Formula ${\cal O}$
+\end_inset
+
+, 
+\begin_inset Formula $D$
+\end_inset
+
+ יחשב את 
+\begin_inset Formula $x={\cal O}\left(1^{n}\right)$
+\end_inset
+
+.
+ אם 
+\begin_inset Formula $x=0^{n}$
+\end_inset
+
+ יחזיר 
+\begin_inset Formula $1$
+\end_inset
+
+, אחרת יחזיר 
+\begin_inset Formula $0$
+\end_inset
+
+.
+ ברור ש-
+\begin_inset Formula $D$
+\end_inset
+
+ רץ בזמן פולינומי ב-
+\begin_inset Formula $n$
+\end_inset
+
+.
+ נשים לב שאם 
+\begin_inset Formula ${\cal O}\equiv P_{k}$
+\end_inset
+
+ אז 
+\begin_inset Formula $P_{k}\left(1^{n}\right)=F_{k}\left(1^{n}\right)\oplus F_{k}\left(1^{n}\right)=0^{n}$
+\end_inset
+
+ ולכן 
+\begin_inset Formula $D$
+\end_inset
+
+ יחזיר 
+\begin_inset Formula $1$
+\end_inset
+
+ בהסתברות 
+\begin_inset Formula $1$
+\end_inset
+
+ לכל 
+\begin_inset Formula $k\in\left\{ 0,1\right\} ^{n}$
+\end_inset
+
+.
+ אם 
+\begin_inset Formula ${\cal O}\equiv f$
+\end_inset
+
+ כאשר 
+\begin_inset Formula $f\leftarrow\text{Func}_{n}$
+\end_inset
+
+ אז 
+\begin_inset Formula $f\left(1^{n}\right)=0^{n}$
+\end_inset
+
+ יקרה בהסתברות 
+\begin_inset Formula $2^{-n}$
+\end_inset
+
+ ולכן ההסתברות ש-
+\begin_inset Formula $D$
+\end_inset
+
+ יחזיר
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\numeric on
+\bar default
+\strikeout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+1
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\numeric off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\bar default
+\strikeout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+היא 
+\begin_inset Formula $2^{-n}$
+\end_inset
+
+.
+ אם כך: 
+\begin_inset Formula 
+\begin{align*}
+ & \left|\Pr_{k\leftarrow\left\{ 0,1\right\} ^{n}}\left[D^{P_{k}\left(\cdot\right)}\left(1^{n}\right)=1\right]-\Pr_{f\leftarrow\text{Func}_{n}}\left[D^{f\left(\cdot\right)}\left(1^{n}\right)=1\right]\right|\\
+= & \left|1-2^{-n}\right|=1-2^{-n}>\frac{1}{n}
+\end{align*}
+
+\end_inset
+
+עבור אינסוף 
+\begin_inset Formula $n$
+\end_inset
+
+, לכן 
+\begin_inset Formula $P$
+\end_inset
+
+ אינה
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\bar default
+\strikeout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+\lang english
+PRF
+\lang hebrew
+.
+\end_layout
+
+\begin_layout Subsection*
+סעיף
+\family roman
+\series bold
+\shape up
+\size large
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\numeric on
+\bar default
+\strikeout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+2
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $H$
+\end_inset
+
+ אכן
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\bar default
+\strikeout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+\lang english
+PRF
+\lang hebrew
+.
+ נניח בשלילה שלא.
+ יהי 
+\begin_inset Formula $B$
+\end_inset
+
+ מבחין יעיל ל-
+\begin_inset Formula $H$
+\end_inset
+
+, כלומר קיים פולינום 
+\begin_inset Formula $p$
+\end_inset
+
+ כך ש: 
+\begin_inset Formula 
+\[
+\left|\Pr_{k\leftarrow\left\{ 0,1\right\} ^{n}}\left[B^{H_{k}\left(\cdot\right)}\left(1^{n}\right)=1\right]-\Pr_{f\leftarrow\text{Func}_{n}}\left[B^{f\left(\cdot\right)}\left(1^{n}\right)=1\right]\right|>\frac{1}{p\left(n\right)}
+\]
+
+\end_inset
+
+עבור אינסוף ערכי 
+\begin_inset Formula $n$
+\end_inset
+
+.
+ נבנה מבחין יעיל 
+\begin_inset Formula $D$
+\end_inset
+
+ ל-
+\begin_inset Formula $F$
+\end_inset
+
+.
+ בהינתן גישת אורקל ל-
+\begin_inset Formula ${\cal O}$
+\end_inset
+
+, 
+\begin_inset Formula $D$
+\end_inset
+
+ יריץ את 
+\begin_inset Formula $B$
+\end_inset
+
+ עם גישת אורקל ל-
+\begin_inset Formula ${\cal O}\oplus1^{n}$
+\end_inset
+
+.
+ כלומר, כאשר 
+\begin_inset Formula $B$
+\end_inset
+
+ יבקש את הפלט עבור הערך 
+\begin_inset Formula $x$
+\end_inset
+
+, 
+\begin_inset Formula $D$
+\end_inset
+
+ יחשב את 
+\begin_inset Formula $y={\cal O}\left(x\right)\oplus1^{n}$
+\end_inset
+
+ על ידי גישת האורקל שלו ויחזיר ל-
+\begin_inset Formula $B$
+\end_inset
+
+ את 
+\begin_inset Formula $y$
+\end_inset
+
+.
+ 
+\begin_inset Formula $D$
+\end_inset
+
+ יחזיר פלט זהה לשל 
+\begin_inset Formula $B$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $D$
+\end_inset
+
+ יעיל כי 
+\begin_inset Formula $B$
+\end_inset
+
+ יעיל ולכן מבצע מס' פולינומיאלי של קריאות לאורקל, שכל אחת מהן מתבצעת בזמן
+ פולינומיאלי )גישת אורקל ופעולת
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\bar default
+\strikeout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+\lang english
+XOR
+\lang hebrew
+(.
+ כמוכן, אם 
+\begin_inset Formula ${\cal O}\equiv F_{k}$
+\end_inset
+
+ אז 
+\begin_inset Formula $y=F_{k}\left(x\right)\oplus1^{n}=H_{k}\left(x\right)$
+\end_inset
+
+ לכל 
+\begin_inset Formula $x,k\in\left\{ 0,1\right\} ^{n}$
+\end_inset
+
+, כלומר 
+\begin_inset Formula $B$
+\end_inset
+
+ הרץ ב-
+\begin_inset Formula $D$
+\end_inset
+
+ מקבל גישת אורקל ל-
+\begin_inset Formula $H_{k}$
+\end_inset
+
+.
+ אם 
+\begin_inset Formula ${\cal O}\equiv f$
+\end_inset
+
+ אז ה-
+\lang english
+XOR
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+\lang hebrew
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\bar default
+\strikeout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+עם
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\begin_inset Formula $1^{n}$
+\end_inset
+
+ אינו משנה את ההסתברות לערך 
+\begin_inset Formula $y$
+\end_inset
+
+ מסויים על פני אחר, עבור 
+\begin_inset Formula $x$
+\end_inset
+
+ כלשהו, כלומר 
+\begin_inset Formula $B$
+\end_inset
+
+ מקבל גישת אורקל לפונ' שנבחרת בהתפלגות אחידה מ-
+\begin_inset Formula $\text{Func}_{n}$
+\end_inset
+
+.
+ לכן: 
+\begin_inset Formula 
+\begin{align*}
+ & \left|\Pr_{k\leftarrow\left\{ 0,1\right\} ^{n}}\left[D^{F_{k}\left(\cdot\right)}\left(1^{n}\right)=1\right]-\Pr_{f\leftarrow\text{Func}_{n}}\left[D^{f\left(\cdot\right)}\left(1^{n}\right)=1\right]\right|\\
+= & \left|\Pr_{k\leftarrow\left\{ 0,1\right\} ^{n}}\left[B^{H_{k}\left(\cdot\right)}\left(1^{n}\right)=1\right]-\Pr_{f\leftarrow\text{Func}_{n}}\left[B^{f\oplus1^{n}\left(\cdot\right)}\left(1^{n}\right)=1\right]\right|\\
+= & \left|\Pr_{k\leftarrow\left\{ 0,1\right\} ^{n}}\left[B^{H_{k}\left(\cdot\right)}\left(1^{n}\right)=1\right]-\Pr_{f\leftarrow\text{Func}_{n}}\left[B^{f\left(\cdot\right)}\left(1^{n}\right)=1\right]\right|>\frac{1}{p\left(n\right)}
+\end{align*}
+
+\end_inset
+
+לאינסוף 
+\begin_inset Formula $n$
+\end_inset
+
+, לפי ההנחה - ובסתירה לכך ש-
+\begin_inset Formula $F$
+\end_inset
+
+ היא 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\bar default
+\strikeout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+\lang english
+PRF
+\lang hebrew
+.
+ לכן 
+\begin_inset Formula $H$
+\end_inset
+
+ היא
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\bar default
+\strikeout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+\lang english
+PRF
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+\lang hebrew
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\bar default
+\strikeout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+כנדרש.
+\end_layout
+
+\begin_layout Section*
+שאלה
+\family roman
+\series bold
+\shape up
+\size larger
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\numeric on
+\bar default
+\strikeout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+8
+\end_layout
+
+\begin_layout Standard
+בשני הסעיפים נניח ש-
+\begin_inset Formula $F$
+\end_inset
+
+ היא כבתיאור השאלה.
+\end_layout
+
+\begin_layout Subsection*
+סעיף
+\family roman
+\series bold
+\shape up
+\size large
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\numeric on
+\bar default
+\strikeout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+1
+\end_layout
+
+\begin_layout Remarks
+המבחין 
+\begin_inset Formula $D$
+\end_inset
+
+ המתואר למטה מחשב את הערך 
+\begin_inset Formula $F_{1^{n}}\left(x\right)$
+\end_inset
+
+.
+ זה בעייתי כי התיאור של 
+\begin_inset Formula $F$
+\end_inset
+
+ הוא אקספוננציאלי ב-
+\begin_inset Formula $n$
+\end_inset
+
+ )חייב להכיל מיפוי של כל ערך ב-
+\begin_inset Formula $\left\{ 0,1\right\} ^{n}$
+\end_inset
+
+( ולכן חישוב זה עלול להפוך את המבחין ללא-יעיל.
+ לא הצלחתי להימנע מכך )אינטואיטיבית, עובדה זו רק מחזקת את הקושי בהבחנה של
+ 
+\begin_inset Formula $H$
+\end_inset
+
+ מפונ' אקראית(.
+ בהינתן שחישוב זה יכול להתבצע ביעילות, גם המבחין 
+\begin_inset Formula $D$
+\end_inset
+
+ ירוץ בזמן פולינומיאלי.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $H$
+\end_inset
+
+ היא
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\bar default
+\strikeout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+\lang english
+PRF
+\lang hebrew
+.
+ אחרת, יהיו 
+\begin_inset Formula $B$
+\end_inset
+
+ מבחין ל-
+\begin_inset Formula $H$
+\end_inset
+
+ ו-
+\begin_inset Formula $p$
+\end_inset
+
+ פולינום כך ש: 
+\begin_inset Formula 
+\[
+\left|\Pr_{k\leftarrow\left\{ 0,1\right\} ^{n}}\left[B^{H_{k}\left(\cdot\right)}\left(1^{n}\right)=1\right]-\Pr_{f\leftarrow\text{Func}_{n,2n}}\left[B^{f\left(\cdot\right)}\left(1^{n}\right)=1\right]\right|>\frac{1}{p\left(n\right)}
+\]
+
+\end_inset
+
+לאינסוף 
+\begin_inset Formula $n$
+\end_inset
+
+.
+ נבנה מבחין 
+\begin_inset Formula $D$
+\end_inset
+
+ ל-
+\begin_inset Formula $F$
+\end_inset
+
+ הפועל כך: בהינתן 
+\begin_inset Formula $1^{n}$
+\end_inset
+
+ וגישת אורקל ל-
+\begin_inset Formula ${\cal O}$
+\end_inset
+
+, 
+\begin_inset Formula $D$
+\end_inset
+
+ יריץ את 
+\begin_inset Formula $B$
+\end_inset
+
+ עם הפרמטר 
+\begin_inset Formula $1^{n}$
+\end_inset
+
+.
+ לכל בקשה לגישת אורקל לערך 
+\begin_inset Formula $x\in\left\{ 0,1\right\} ^{n}$
+\end_inset
+
+ מ-
+\begin_inset Formula $B$
+\end_inset
+
+, 
+\begin_inset Formula $D$
+\end_inset
+
+ יחשב את 
+\begin_inset Formula $F_{1^{n}}\left(x\right)$
+\end_inset
+
+ ויחזיר ל-
+\begin_inset Formula $B$
+\end_inset
+
+ את 
+\begin_inset Formula ${\cal O}\left(x\right)\oplus F_{1^{n}}\left(x\right)$
+\end_inset
+
+ )זה אפשרי כי תיאור 
+\begin_inset Formula $F$
+\end_inset
+
+ הוא פומבי; וזה בעייתי כי תיאור 
+\begin_inset Formula $F$
+\end_inset
+
+ הוא ענק(.
+ 
+\begin_inset Formula $D$
+\end_inset
+
+ יחזיר
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\numeric on
+\bar default
+\strikeout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+1
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\numeric off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\bar default
+\strikeout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+אם"ם 
+\begin_inset Formula $B$
+\end_inset
+
+ החזיר
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\numeric on
+\bar default
+\strikeout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+1
+\numeric off
+.
+\end_layout
+
+\begin_layout Standard
+נשים לב שלכל 
+\begin_inset Formula $n\in\mathbb{N}$
+\end_inset
+
+, עבור 
+\begin_inset Formula ${\cal O}=F_{k}$
+\end_inset
+
+ עבור 
+\begin_inset Formula $k\ot\left\{ 0,1\right\} ^{n}$
+\end_inset
+
+, 
+\begin_inset Formula $D$
+\end_inset
+
+ מדמה את ריצת 
+\begin_inset Formula $B$
+\end_inset
+
+ עם אורקל 
+\begin_inset Formula $H_{k}$
+\end_inset
+
+ - לכן: 
+\begin_inset Formula 
+\[
+\Pr_{k\ot\left\{ 0,1\right\} ^{n}}\left[D^{F_{k}\left(\cdot\right)}\left(1^{n}\right)=1\right]=\Pr_{k\ot\left\{ 0,1\right\} ^{n}}\left[B^{H_{k}\left(\cdot\right)}\left(1^{n}\right)=1\right]
+\]
+
+\end_inset
+
+כמוכן אם 
+\begin_inset Formula ${\cal O}=f$
+\end_inset
+
+ עבור 
+\begin_inset Formula $f\ot\func{n,2n}$
+\end_inset
+
+ אז הערך 
+\begin_inset Formula $f\left(x\right)\oplus F_{1^{n}}\left(x\right)$
+\end_inset
+
+ הוא ערך המפולג באופן אחיד ב-
+\begin_inset Formula $\left\{ 0,1\right\} ^{2n}$
+\end_inset
+
+ ובלתי תלוי ב-
+\begin_inset Formula $f\left(x'\right)\oplus F_{1^{n}}\left(x'\right)$
+\end_inset
+
+ עבור 
+\begin_inset Formula $x'\neq x\in\left\{ 0,1\right\} ^{n}$
+\end_inset
+
+.
+ לכן: 
+\begin_inset Formula 
+\begin{align*}
+ & \left|\Pr_{k\leftarrow\left\{ 0,1\right\} ^{n}}\left[D^{F_{k}\left(\cdot\right)}\left(1^{n}\right)=1\right]-\Pr_{f\leftarrow\text{Func}_{n,2n}}\left[D^{f\left(\cdot\right)}\left(1^{n}\right)=1\right]\right|\\
+= & \left|\Pr_{k\leftarrow\left\{ 0,1\right\} ^{n}}\left[B^{H_{k}\left(\cdot\right)}\left(1^{n}\right)=1\right]-\Pr_{f\leftarrow\text{Func}_{n,2n}}\left[B^{f\left(\cdot\right)}\left(1^{n}\right)=1\right]\right|>\frac{1}{p\left(n\right)}
+\end{align*}
+
+\end_inset
+
+לאינסוף 
+\begin_inset Formula $n$
+\end_inset
+
+ בסתירה לכך ש-
+\begin_inset Formula $F$
+\end_inset
+
+ פסאודו רנדומית.
+\end_layout
+
+\begin_layout Subsection*
+סעיף
+\family roman
+\series bold
+\shape up
+\size large
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\numeric on
+\bar default
+\strikeout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+2
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $G$
+\end_inset
+
+ אינו בהכרח
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\bar default
+\strikeout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+\lang english
+PRG
+\lang hebrew
+.
+\end_layout
+
+\begin_layout Standard
+נגדיר פונ' 
+\begin_inset Formula $F'$
+\end_inset
+
+ באופן הבא: 
+\begin_inset Formula 
+\[
+F'_{k}\left(x\right)=\begin{cases}
+F_{k}\left(x\right), & k\neq0^{n}\\
+0^{2n}, & k=0^{n}
+\end{cases}
+\]
+
+\end_inset
+
+לכל 
+\begin_inset Formula $k,x\in\left\{ 0,1\right\} ^{n}$
+\end_inset
+
+.
+ נטען ש-
+\begin_inset Formula $F'$
+\end_inset
+
+ היא
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\bar default
+\strikeout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+\lang english
+PRF
+\lang hebrew
+.
+ אחרת, נניח ש-
+\begin_inset Formula $B$
+\end_inset
+
+ מבחין יעיל ל-
+\begin_inset Formula $F'$
+\end_inset
+
+ המקיים: 
+\begin_inset Formula 
+\[
+\left|\Pr_{k\leftarrow\left\{ 0,1\right\} ^{n}}\left[B^{F'_{k}\left(\cdot\right)}\left(1^{n}\right)=1\right]-\Pr_{f\leftarrow\text{Func}_{n,2n}}\left[B^{f\left(\cdot\right)}\left(1^{n}\right)=1\right]\right|>\frac{1}{p\left(n\right)}
+\]
+
+\end_inset
+
+עבור 
+\begin_inset Formula $p$
+\end_inset
+
+ פולינום ואינסוף ערכי 
+\begin_inset Formula $n\in\mathbb{N}$
+\end_inset
+
+.
+ לכל 
+\begin_inset Formula $n\in\mathbb{N}$
+\end_inset
+
+ מתקיים: 
+\begin_inset Formula 
+\begin{align*}
+\Pr_{k\leftarrow\left\{ 0,1\right\} ^{n}}\left[B^{F'_{k}\left(\cdot\right)}\left(1^{n}\right)=1\right] & =\Prc{B^{F'_{k}\left(\cdot\right)}\left(1^{n}\right)=1}{k\neq0^{n}}\Pr\left[k\neq0^{n}\right]\\
+ & +\overbrace{\Prc{B^{F'_{k}\left(\cdot\right)}\left(1^{n}\right)=1}{k=0^{n}}}^{q_{n}}\Pr\left[k=0^{n}\right]\\
+ & =\overbrace{\Pr\left[B^{F_{k}\left(\cdot\right)}\left(1^{n}\right)=1\right]}^{r_{n}}\cdot\left(1-2^{-n}\right)+q_{n}\cdot2^{-n}\\
+ & =\Pr\left[B^{F_{k}\left(\cdot\right)}\left(1^{n}\right)=1\right]+2^{-n}\cdot\left(q_{n}-r_{n}\right)
+\end{align*}
+
+\end_inset
+
+לכן, לאינסוף 
+\begin_inset Formula $n$
+\end_inset
+
+: 
+\begin_inset Formula 
+\begin{align*}
+\frac{1}{p\left(n\right)} & <\left|\Pr_{k\leftarrow\left\{ 0,1\right\} ^{n}}\left[B^{F'_{k}\left(\cdot\right)}\left(1^{n}\right)=1\right]-\Pr_{f\leftarrow\text{Func}_{n,2n}}\left[B^{f\left(\cdot\right)}\left(1^{n}\right)=1\right]\right|\\
+ & =\left|\Pr\left[B^{F_{k}\left(\cdot\right)}\left(1^{n}\right)=1\right]+2^{-n}\cdot\left(q_{n}-r_{n}\right)-\Pr_{f\leftarrow\text{Func}_{n,2n}}\left[B^{f\left(\cdot\right)}\left(1^{n}\right)=1\right]\right|\\
+ & \le\left|\Pr\left[B^{F_{k}\left(\cdot\right)}\left(1^{n}\right)=1\right]-\Pr_{f\leftarrow\text{Func}_{n,2n}}\left[B^{f\left(\cdot\right)}\left(1^{n}\right)=1\right]\right|+\left|\left(q_{n}-r_{n}\right)\cdot2^{-n}\right|
+\end{align*}
+
+\end_inset
+
+כאשר המעבר האחרון נובע מאי-שוויון המשולש.
+ באופן דומה לבשאלה 
+\begin_inset Formula $5$
+\end_inset
+
+, 
+\begin_inset Formula $\frac{1}{p\left(n\right)}-\left|\left(q_{n}-r_{n}\right)\cdot2^{-n}\right|$
+\end_inset
+
+ אינה פונ' זניחה, וזו סתירה לכך ש-
+\begin_inset Formula $F$
+\end_inset
+
+ היא
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\bar default
+\strikeout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+\lang english
+PRF
+\lang hebrew
+, כי בחישוב הנ"ל אפשר לראות ש-
+\begin_inset Formula $B$
+\end_inset
+
+ מבחין יעיל עבורה.
+ לכן 
+\begin_inset Formula $F'$
+\end_inset
+
+ היא
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\bar default
+\strikeout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+\lang english
+PRF
+\lang hebrew
+.
+\end_layout
+
+\begin_layout Standard
+נטען עתה ש-
+\begin_inset Formula $G$
+\end_inset
+
+ המוגדר על ידי 
+\begin_inset Formula $G\left(s\right)=F'_{0^{n}}\left(s\right)$
+\end_inset
+
+ אינו
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\bar default
+\strikeout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+\lang english
+PRG
+\lang hebrew
+.
+ נבנה מבחין 
+\begin_inset Formula $D$
+\end_inset
+
+ ל-
+\begin_inset Formula $G$
+\end_inset
+
+: בהינתן קלט 
+\begin_inset Formula $s\in\left\{ 0,1\right\} ^{2n}$
+\end_inset
+
+, 
+\begin_inset Formula $D$
+\end_inset
+
+ יחזיר
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\numeric on
+\bar default
+\strikeout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+1
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\numeric off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\bar default
+\strikeout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+אם"ם 
+\begin_inset Formula $s=0^{2n}$
+\end_inset
+
+.
+ נשים לב ש-
+\begin_inset Formula $D$
+\end_inset
+
+ יחזיר
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\numeric on
+\bar default
+\strikeout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+1
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\numeric off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\bar default
+\strikeout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+על 
+\begin_inset Formula $G\left(s\right)$
+\end_inset
+
+, לכל 
+\begin_inset Formula $s\in\left\{ 0,1\right\} ^{n}$
+\end_inset
+
+, כלומר 
+\begin_inset Formula $\Pr\left[D\left(G\left(U_{n}\right)\right)=1\right]=1$
+\end_inset
+
+.
+ כמוכן עבור ערך 
+\begin_inset Formula $r\leftarrow\left\{ 0,1\right\} ^{2n}$
+\end_inset
+
+, 
+\begin_inset Formula $D$
+\end_inset
+
+ יחזיר
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\numeric on
+\bar default
+\strikeout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+1
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\numeric off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\bar default
+\strikeout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+בהסתברות בה 
+\begin_inset Formula $r=0^{2n}$
+\end_inset
+
+ שהיא 
+\begin_inset Formula $2^{-2n}$
+\end_inset
+
+.
+ לכן: 
+\begin_inset Formula 
+\begin{align*}
+ & \left|\Pr_{s\leftarrow\left\{ 0,1\right\} ^{n}}\left[D\left(G\left(s\right)\right)=1\right]-\Pr_{r\leftarrow\left\{ 0,1\right\} ^{2n}}\left[D\left(r\right)=1\right]\right|\\
+= & \left|1-\Pr_{r\leftarrow\left\{ 0,1\right\} ^{2n}}\left[r=0^{2n}\right]\right|\\
+= & \left|1-2^{-2n}\right|=1-2^{-2n}>\frac{1}{n}
+\end{align*}
+
+\end_inset
+
+עבור אינסוף 
+\begin_inset Formula $n$
+\end_inset
+
+, כלומר 
+\begin_inset Formula $G$
+\end_inset
+
+ אינה
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\bar default
+\strikeout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+\lang english
+PRG
+\lang hebrew
+.
+\end_layout
+
+\begin_layout Section*
+שאלה
+\family roman
+\series bold
+\shape up
+\size larger
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\numeric on
+\bar default
+\strikeout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+9
+\end_layout
+
+\begin_layout Subsection*
+סעיף
+\family roman
+\series bold
+\shape up
+\size large
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\numeric on
+\bar default
+\strikeout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+1
+\end_layout
+
+\begin_layout Standard
+המערכת לא בטוחה )לא
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\bar default
+\strikeout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+\lang english
+IND
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+\lang hebrew
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\bar default
+\strikeout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+ובפרט לא
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\bar default
+\strikeout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+\lang english
+CPA
+\lang hebrew
+(.
+ נבנה יריב 
+\begin_inset Formula $\Ad$
+\end_inset
+
+ המזהה הצפנות בהסתברות 
+\begin_inset Formula $1$
+\end_inset
+
+.
+ בהינתן הפרמטר 
+\begin_inset Formula $n\in\mathbb{N}$
+\end_inset
+
+, היריב יפלוט שתי הודעות 
+\begin_inset Formula $m_{0}=0^{n},m_{1}=1^{n}$
+\end_inset
+
+ ויקבל הצפנה 
+\begin_inset Formula $c^{*}=\left(r^{*},s^{*}\right)$
+\end_inset
+
+ - כאשר 
+\begin_inset Formula $r^{*}$
+\end_inset
+
+ הוא 
+\begin_inset Formula $n$
+\end_inset
+
+ הביטים הראשונים ב-
+\begin_inset Formula $c^{*}$
+\end_inset
+
+ ו-
+\begin_inset Formula $s^{*}$
+\end_inset
+
+ הוא יתר המחרוזת.
+ 
+\begin_inset Formula $\Ad$
+\end_inset
+
+ יחשב את 
+\begin_inset Formula $m^{*}=G\left(r^{*}\right)\oplus s^{*}$
+\end_inset
+
+ ויחזיר: 
+\begin_inset Formula 
+\[
+b'=\begin{cases}
+0, & m^{*}=0^{n}\\
+1, & m^{*}=1^{n}
+\end{cases}
+\]
+
+\end_inset
+
+נטען ש-
+\begin_inset Formula $\ind=1$
+\end_inset
+
+.
+ יהי 
+\begin_inset Formula $b\in\left\{ 0,1\right\} $
+\end_inset
+
+ כך ש-
+\begin_inset Formula $c^{*}=\text{Enc}_{k}\left(m_{b}\right)$
+\end_inset
+
+.
+ 
+\begin_inset Formula $G$
+\end_inset
+
+ ידועה וניתנת לחישוב בזמן יעיל, 
+\begin_inset Formula $r^{*}$
+\end_inset
+
+ ידוע ולכן החישוב: 
+\begin_inset Formula 
+\[
+m^{*}=G\left(r^{*}\right)\oplus s^{*}=G\left(r^{*}\right)\oplus\left(G\left(r^{*}\right)\oplus m_{b}\right)=m_{b}
+\]
+
+\end_inset
+
+מתבצע באופן יעיל.
+ מכאן 
+\begin_inset Formula $b'=b$
+\end_inset
+
+ כנדרש.
+\end_layout
+
+\begin_layout Subsection*
+סעיף
+\family roman
+\series bold
+\shape up
+\size large
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\numeric on
+\bar default
+\strikeout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+2
+\end_layout
+
+\begin_layout Standard
+המערכת אינה
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\bar default
+\strikeout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+\lang english
+CPA
+\lang hebrew
+-בטוחה.
+ נגדיר יריב 
+\begin_inset Formula $\Ad$
+\end_inset
+
+ הפועל באופן הבא: מבקש הצפנה להודעה 
+\begin_inset Formula $m\neq0^{n},1^{n}$
+\end_inset
+
+ כלשהי ומקבל צופן 
+\begin_inset Formula $c$
+\end_inset
+
+.
+ אח"כ יחשב את 
+\begin_inset Formula $x=c\oplus m$
+\end_inset
+
+.
+ לבסוף יפלוט 
+\begin_inset Formula $m_{0}=0^{n},m_{1}=1^{n}$
+\end_inset
+
+ ויקבל צופן 
+\begin_inset Formula $c^{*}$
+\end_inset
+
+ - אז 
+\begin_inset Formula $\Ad$
+\end_inset
+
+ יחזיר
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\numeric on
+\bar default
+\strikeout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+1
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\numeric off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\bar default
+\strikeout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+אם"ם 
+\begin_inset Formula $c^{*}\oplus x=1^{n}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+נטען ש-
+\begin_inset Formula $x=F_{k}\left(0^{n}\right)$
+\end_inset
+
+ ונסיים - כי אז: 
+\begin_inset Formula 
+\[
+x\oplus c^{*}=F_{k}\left(0^{n}\right)\oplus\left(m_{b}\oplus F_{k}\left(0^{n}\right)\right)=m_{b}
+\]
+
+\end_inset
+
+אכן, 
+\begin_inset Formula $x=c\oplus m=\left(F_{k}\left(0^{n}\right)\oplus m\right)\oplus m=F_{k}\left(0^{n}\right)$
+\end_inset
+
+ ולכן המערכת לא בטוחה נגד
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\bar default
+\strikeout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+\lang english
+CPA
+\lang hebrew
+.
+\end_layout
+
+\begin_layout Standard
+עם זאת, למערכת יש הצפנות בלתי ניתנות להבחנה )
+\lang english
+IND-Secure
+\lang hebrew
+(.
+ נניח בשלילה שלא, ויהיו 
+\begin_inset Formula $F$
+\end_inset
+
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\bar default
+\strikeout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+\lang english
+PRF
+\lang hebrew
+, יריב 
+\begin_inset Formula $\Ad$
+\end_inset
+
+ ופולינום 
+\begin_inset Formula $p$
+\end_inset
+
+ כך שלאינסוף 
+\begin_inset Formula $n\in\mathbb{N}$
+\end_inset
+
+ מתקיים: 
+\begin_inset Formula 
+\[
+\ind>\frac{1}{2}+\frac{1}{p\left(n\right)}
+\]
+
+\end_inset
+
+נבנה מבחין 
+\begin_inset Formula $D$
+\end_inset
+
+ שבהינתן הקלט 
+\begin_inset Formula $1^{n}$
+\end_inset
+
+ וגישת אורקל לפונקצייה 
+\begin_inset Formula ${\cal O}$
+\end_inset
+
+, מריץ את 
+\begin_inset Formula ${\cal A}$
+\end_inset
+
+ ומקבל זוג הודעות 
+\begin_inset Formula $m_{0},m_{1}$
+\end_inset
+
+, דוגם 
+\begin_inset Formula $b\leftarrow\left\{ 0,1\right\} $
+\end_inset
+
+ ומחזיר ל-
+\begin_inset Formula ${\cal A}$
+\end_inset
+
+ את 
+\begin_inset Formula $c^{*}={\cal O}\left(0^{n}\right)\oplus m_{b}$
+\end_inset
+
+.
+ לבסוף 
+\begin_inset Formula $D$
+\end_inset
+
+ עונה 
+\begin_inset Formula $1$
+\end_inset
+
+ אם"ם 
+\begin_inset Formula $b'=b$
+\end_inset
+
+ כאשר 
+\begin_inset Formula $b'$
+\end_inset
+
+ הוא הפלט של 
+\begin_inset Formula $\Ad$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+ראשית, קל לראות ש-
+\begin_inset Formula $D$
+\end_inset
+
+ רץ בזמן פולינומיאלי כי 
+\begin_inset Formula $\Ad$
+\end_inset
+
+ הוא
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\bar default
+\strikeout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+\lang english
+PPT
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+\lang hebrew
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\bar default
+\strikeout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+לפי הנחה )וגישת אורקל ו-
+\lang english
+XOR
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+\lang hebrew
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\bar default
+\strikeout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+מתבצעות באופן יעיל(.
+ נשים לב שכאשר 
+\begin_inset Formula ${\cal O}\equiv f$
+\end_inset
+
+ עבור 
+\begin_inset Formula $f\ot\func n$
+\end_inset
+
+ אז 
+\begin_inset Formula $f\left(0^{n}\right)$
+\end_inset
+
+ שקול לערך המפולג אחיד מ-
+\begin_inset Formula $\left\{ 0,1\right\} ^{n}$
+\end_inset
+
+, כלומר הסיכוי של 
+\begin_inset Formula ${\cal A}$
+\end_inset
+
+ לענות נכונה בניסוי
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\bar default
+\strikeout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+\lang english
+IND
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+\lang hebrew
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\bar default
+\strikeout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+הוא 
+\begin_inset Formula $\frac{1}{2}$
+\end_inset
+
+.
+ אם 
+\begin_inset Formula ${\cal O}\equiv F_{k}$
+\end_inset
+
+ אז 
+\begin_inset Formula $\Ad$
+\end_inset
+
+ מקבל בדיוק את ההצפנות של המערכת, כלומר 
+\begin_inset Formula $D$
+\end_inset
+
+ מדמה את הניסוי בו 
+\begin_inset Formula $\Ad$
+\end_inset
+
+ מצליח לפי הנחה.
+ לכן: 
+\begin_inset Formula 
+\begin{align*}
+ & \left|\Pr_{k\ot\left\{ 0,1\right\} ^{n}}\left[D^{F_{k}\left(\cdot\right)}\left(1^{n}\right)=1\right]-\Pr_{f\ot\func n}\left[D^{f\left(\cdot\right)}\left(1^{n}\right)=1\right]\right|\\
+= & \left|\ind-\frac{1}{2}\right|>\left|\frac{1}{2}+\frac{1}{p\left(n\right)}-\frac{1}{2}\right|=\frac{1}{p\left(n\right)}
+\end{align*}
+
+\end_inset
+
+לאינסוף 
+\begin_inset Formula $n$
+\end_inset
+
+, בסתירה לכך ש-
+\begin_inset Formula $F$
+\end_inset
+
+ היא
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\bar default
+\strikeout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+\lang english
+PRF
+\lang hebrew
+.
+ לכן המערכת בעלת הצפנות בלתי ניתנות להבחנה.
+\end_layout
+
+\begin_layout Subsection*
+סעיף
+\family roman
+\series bold
+\shape up
+\size large
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\numeric on
+\bar default
+\strikeout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+3
+\end_layout
+
+\begin_layout Standard
+המערכת בטוחה בפני
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\bar default
+\strikeout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+\lang english
+CPA
+\lang hebrew
+ ולכן גם בעלת הצפנות בלתי ניתנות להבחנה.
+\end_layout
+
+\begin_layout Standard
+ראינו בכיתה שהמערכת המחזירה 
+\begin_inset Formula $\left(r,F_{k}\left(r\right)\oplus m\right)$
+\end_inset
+
+ עבור
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\bar default
+\strikeout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+\lang english
+PRF
+\lang hebrew
+ 
+\begin_inset Formula $F$
+\end_inset
+
+, 
+\begin_inset Formula $r,k\ot\left\{ 0,1\right\} ^{n}$
+\end_inset
+
+ והודעה 
+\begin_inset Formula $m$
+\end_inset
+
+ היא בטוחה בפני
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\bar default
+\strikeout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+\lang english
+CPA
+\lang hebrew
+.
+ אם נראה שהפונקצייה 
+\begin_inset Formula $H$
+\end_inset
+
+ המוגדרת על ידי: 
+\begin_inset Formula $H_{k}\left(r\right)=r\oplus F_{k}\left(r\right)$
+\end_inset
+
+ היא
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\bar default
+\strikeout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+\lang english
+PRF
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+\lang hebrew
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\bar default
+\strikeout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+נקבל שהמערכת המתוארת בסעיף היא בדיוק המתוארת בכיתה, ולכן בטוחה כפי שהוכחנו.
+\end_layout
+
+\begin_layout Standard
+נניח בשלילה ש-
+\begin_inset Formula $H$
+\end_inset
+
+ אינה
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\bar default
+\strikeout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+\lang english
+PRF
+\lang hebrew
+.
+ יהי 
+\begin_inset Formula $B$
+\end_inset
+
+ מבחין ל-
+\begin_inset Formula $H$
+\end_inset
+
+ ו-
+\begin_inset Formula $p$
+\end_inset
+
+ פולינום כך ש: 
+\begin_inset Formula 
+\[
+\left|\Pr_{k\ot\left\{ 0,1\right\} ^{n}}\left[B^{H_{k}\left(\cdot\right)}\left(1^{n}\right)=1\right]-\Pr_{f\ot\func n}\left[B^{f\left(\cdot\right)}\left(1^{n}\right)=1\right]\right|>\frac{1}{p\left(n\right)}
+\]
+
+\end_inset
+
+נבנה מבחין 
+\begin_inset Formula $D$
+\end_inset
+
+ ל-
+\begin_inset Formula $F$
+\end_inset
+
+ באופן הבא: בהינתן אורקל 
+\begin_inset Formula ${\cal O}$
+\end_inset
+
+ וקלט 
+\begin_inset Formula $1^{n}$
+\end_inset
+
+, 
+\begin_inset Formula $D$
+\end_inset
+
+ יריץ את 
+\begin_inset Formula $B$
+\end_inset
+
+.
+ לכל בקשת אורקל של 
+\begin_inset Formula $B$
+\end_inset
+
+ לערך 
+\begin_inset Formula $r\in\left\{ 0,1\right\} ^{n}$
+\end_inset
+
+, 
+\begin_inset Formula $D$
+\end_inset
+
+ יחזיר לו 
+\begin_inset Formula ${\cal O}\left(r\right)\oplus r$
+\end_inset
+
+.
+ לבסוף 
+\begin_inset Formula $D$
+\end_inset
+
+ יענה 
+\begin_inset Formula $1$
+\end_inset
+
+ אם"ם 
+\begin_inset Formula $B$
+\end_inset
+
+ ענה 
+\begin_inset Formula $1$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+נשים לב שאם 
+\begin_inset Formula ${\cal O}=F_{k}$
+\end_inset
+
+ אז 
+\begin_inset Formula ${\cal O}\left(r\right)\oplus r=H_{k}\left(r\right)$
+\end_inset
+
+, כלומר 
+\begin_inset Formula $D$
+\end_inset
+
+ מדמה את ריצת המבחין 
+\begin_inset Formula $B$
+\end_inset
+
+ עם אורקל 
+\begin_inset Formula $H_{k}$
+\end_inset
+
+.
+ כמוכן אם 
+\begin_inset Formula ${\cal O}=f$
+\end_inset
+
+ כאשר 
+\begin_inset Formula $f\ot\func n$
+\end_inset
+
+ אז הערך 
+\begin_inset Formula $f\left(r\right)$
+\end_inset
+
+ שקול לערך המפולג אחיד ב-
+\begin_inset Formula $\left\{ 0,1\right\} ^{n}$
+\end_inset
+
+, וכך גם 
+\begin_inset Formula $f\left(r\right)\oplus r$
+\end_inset
+
+.
+ לכן: 
+\begin_inset Formula 
+\begin{align*}
+ & \left|\Pr_{k\ot\left\{ 0,1\right\} ^{n}}\left[D^{F_{k}\left(\cdot\right)}\left(1^{n}\right)=1\right]-\Pr_{f\ot\func n}\left[D^{f\left(\cdot\right)}\left(1^{n}\right)=1\right]\right|\\
+= & \left|\Pr_{k\ot\left\{ 0,1\right\} ^{n}}\left[B^{H_{k}\left(\cdot\right)}\left(1^{n}\right)=1\right]-\Pr_{f\ot\func n}\left[B^{f\left(\cdot\right)}\left(1^{n}\right)=1\right]\right|>\frac{1}{p\left(n\right)}
+\end{align*}
+
+\end_inset
+
+עבור אינסוף 
+\begin_inset Formula $n$
+\end_inset
+
+ בסתירה לכך ש-
+\begin_inset Formula $F$
+\end_inset
+
+ היא
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\bar default
+\strikeout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+\lang english
+PRF
+\lang hebrew
+.
+\end_layout
+
+\end_body
+\end_document
