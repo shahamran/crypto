@@ -2521,6 +2521,340 @@ PRF
 1
 \end_layout
 
+\begin_layout Standard
+נגדיר: 
+\begin_inset Formula 
+\[
+F'_{k}\left(x\right)=\begin{cases}
+F_{k}\left(x\right), & k\neq1^{n}\\
+0^{2n}, & k=1^{n}
+\end{cases}
+\]
+
+\end_inset
+
+לכל 
+\begin_inset Formula $x\in\left\{ 0,1\right\} ^{n}$
+\end_inset
+
+.
+ נטען ש-
+\begin_inset Formula $F'$
+\end_inset
+
+ היא
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\bar default
+\strikeout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+\lang english
+PRF
+\lang hebrew
+.
+ יהי 
+\begin_inset Formula $D$
+\end_inset
+
+ מבחין יעיל ל-
+\begin_inset Formula $F'$
+\end_inset
+
+ ונגדיר: 
+\begin_inset Formula 
+\[
+\nu\left(n\right)=\left|\Pr_{k\leftarrow\left\{ 0,1\right\} ^{n}}\left[D^{F'_{k}\left(\cdot\right)}\left(1^{n}\right)=1\right]-\Pr_{f\leftarrow\text{Func}_{n,2n}}\left[D^{f\left(\cdot\right)}\left(1^{n}\right)=1\right]\right|
+\]
+
+\end_inset
+
+כעת יהי 
+\begin_inset Formula $B$
+\end_inset
+
+ מבחין יעיל ל-
+\begin_inset Formula $F$
+\end_inset
+
+.
+ 
+\begin_inset Newline newline
+\end_inset
+
+כלומר 
+\begin_inset Formula $F'$
+\end_inset
+
+ היא
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\bar default
+\strikeout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+\lang english
+PRF
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+\lang hebrew
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\bar default
+\strikeout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+כנדרש.
+\end_layout
+
+\begin_layout Standard
+נטען ש-
+\begin_inset Formula $H_{k}\left(x\right)=F'_{k}\left(x\right)\oplus F'_{1^{n}}\left(x\right)$
+\end_inset
+
+ לכל 
+\begin_inset Formula $x,k\in\left\{ 0,1\right\} ^{n}$
+\end_inset
+
+ אינה
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\bar default
+\strikeout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+\lang english
+PRF
+\lang hebrew
+.
+ נשים לב ש-
+\begin_inset Formula $F'_{1^{n}}\left(x\right)=0^{2n}$
+\end_inset
+
+ לכל 
+\begin_inset Formula $x\in\left\{ 0,1\right\} ^{n}$
+\end_inset
+
+, לכן: 
+\begin_inset Formula $H_{k}\left(x\right)=F'_{k}\left(x\right)\oplus1^{2n}$
+\end_inset
+
+ וראינו בשאלה
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\numeric on
+\bar default
+\strikeout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+7
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\numeric off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\bar default
+\strikeout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+סעיף
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\numeric on
+\bar default
+\strikeout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+2
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\numeric off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\bar default
+\strikeout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+ש-
+\begin_inset Formula $H$
+\end_inset
+
+ כזאת )כמעט( אינה
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\bar default
+\strikeout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+\lang english
+PRF
+\lang hebrew
+.
+\end_layout
+
+\begin_layout Standard
+נבנה מבחין 
+\begin_inset Formula $D$
+\end_inset
+
+ כך: בהינתן קלט 
+\begin_inset Formula $1^{n}$
+\end_inset
+
+ וגישת אורקל 
+\begin_inset Formula ${\cal O}$
+\end_inset
+
+, 
+\end_layout
+
 \begin_layout Subsection*
 סעיף
 \family roman
@@ -2550,80 +2884,417 @@ PRF
 2
 \end_layout
 
-\begin_layout Remarks
-יש בעיה עם יעילות המבחין שיתואר בהמשך, שכן התיאור של 
-\begin_inset Formula $F$
+\begin_layout Standard
+נגדיר פונ' 
+\begin_inset Formula $F'$
 \end_inset
 
- הוא בגודל אקספוננציאלי, ולכן ללא גישת אורקל לא יוכל לחשב את 
-\begin_inset Formula $F_{0^{n}}\left(s\right)$
-\end_inset
-
- באופן יעיל.
- 
-\end_layout
-
-\begin_layout Remarks
-\begin_inset Formula $G$
-\end_inset
-
- הוא
-\family roman
-\series medium
-\shape up
-\size normal
-\emph off
-\bar no
-\strikeout off
-\uuline off
-\uwave off
-\noun off
-\color none
- 
-\family default
-\series default
-\shape default
-\size default
-\emph default
-\bar default
-\strikeout default
-\uuline default
-\uwave default
-\noun default
-\color inherit
-\lang english
-PRG
-\lang hebrew
-.
- בשלילה שלא, כלומר קיים פולינום 
-\begin_inset Formula $p$
-\end_inset
-
- ומבחין יעיל 
-\begin_inset Formula $B$
-\end_inset
-
- כך ש: 
+ באופן הבא: 
 \begin_inset Formula 
 \[
-\left|\Pr_{s\leftarrow\left\{ 0,1\right\} ^{n}}\left[B\left(G\left(s\right)\right)=1\right]-\Pr_{r\leftarrow\left\{ 0,1\right\} ^{2n}}\left[B\left(r\right)=1\right]\right|>\frac{1}{p\left(n\right)}
+F'_{k}\left(x\right)=\begin{cases}
+F_{k}\left(x\right), & k\neq0^{n}\\
+0^{2n}, & k=0^{n}
+\end{cases}
 \]
 
 \end_inset
 
-עבור אינסוף ערכי 
-\begin_inset Formula $n$
+לכל 
+\begin_inset Formula $k,x\in\left\{ 0,1\right\} ^{n}$
 \end_inset
 
 .
+ נטען ש-
+\begin_inset Formula $F'$
+\end_inset
+
+ היא
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
  
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\bar default
+\strikeout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+\lang english
+PRF
+\lang hebrew
+.
+ אחרת, נניח ש-
+\begin_inset Formula $B$
+\end_inset
+
+ מבחין יעיל ל-
+\begin_inset Formula $F'$
+\end_inset
+
+ המקיים: 
+\begin_inset Formula 
+\[
+\left|\Pr_{k\leftarrow\left\{ 0,1\right\} ^{n}}\left[B^{F'_{k}\left(\cdot\right)}\left(1^{n}\right)=1\right]-\Pr_{f\leftarrow\text{Func}_{n,2n}}\left[B^{f\left(\cdot\right)}\left(1^{n}\right)=1\right]\right|>\frac{1}{p\left(n\right)}
+\]
+
+\end_inset
+
+עבור 
+\begin_inset Formula $p$
+\end_inset
+
+ פולינום ואינסוף ערכי 
+\begin_inset Formula $n\in\mathbb{N}$
+\end_inset
+
+.
+ לכל 
+\begin_inset Formula $n\in\mathbb{N}$
+\end_inset
+
+ מתקיים: 
+\begin_inset Formula 
+\begin{align*}
+\Pr_{k\leftarrow\left\{ 0,1\right\} ^{n}}\left[B^{F'_{k}\left(\cdot\right)}\left(1^{n}\right)=1\right] & =\Prc{B^{F'_{k}\left(\cdot\right)}\left(1^{n}\right)=1}{k\neq0^{n}}\Pr\left[k\neq0^{n}\right]\\
+ & +\overbrace{\Prc{B^{F'_{k}\left(\cdot\right)}\left(1^{n}\right)=1}{k=0^{n}}}^{q_{n}}\Pr\left[k=0^{n}\right]\\
+ & =\overbrace{\Pr\left[B^{F_{k}\left(\cdot\right)}\left(1^{n}\right)=1\right]}^{r_{n}}\cdot\left(1-2^{-n}\right)+q_{n}\cdot2^{-n}\\
+ & =\Pr\left[B^{F_{k}\left(\cdot\right)}\left(1^{n}\right)=1\right]+2^{-n}\cdot\left(q_{n}-r_{n}\right)
+\end{align*}
+
+\end_inset
+
+לכן, לאינסוף 
+\begin_inset Formula $n$
+\end_inset
+
+: 
+\begin_inset Formula 
+\begin{align*}
+\frac{1}{p\left(n\right)} & <\left|\Pr_{k\leftarrow\left\{ 0,1\right\} ^{n}}\left[B^{F'_{k}\left(\cdot\right)}\left(1^{n}\right)=1\right]-\Pr_{f\leftarrow\text{Func}_{n,2n}}\left[B^{f\left(\cdot\right)}\left(1^{n}\right)=1\right]\right|\\
+ & =\left|\Pr\left[B^{F_{k}\left(\cdot\right)}\left(1^{n}\right)=1\right]+2^{-n}\cdot\left(q_{n}-r_{n}\right)-\Pr_{f\leftarrow\text{Func}_{n,2n}}\left[B^{f\left(\cdot\right)}\left(1^{n}\right)=1\right]\right|\\
+ & \le\left|\Pr\left[B^{F_{k}\left(\cdot\right)}\left(1^{n}\right)=1\right]-\Pr_{f\leftarrow\text{Func}_{n,2n}}\left[B^{f\left(\cdot\right)}\left(1^{n}\right)=1\right]\right|+\left|\left(q_{n}-r_{n}\right)\cdot2^{-n}\right|
+\end{align*}
+
+\end_inset
+
+כאשר המעבר האחרון נובע מאי-שוויון המשולש.
+ באופן דומה לבשאלה 
+\begin_inset Formula $5$
+\end_inset
+
+, 
+\begin_inset Formula $\frac{1}{p\left(n\right)}-\left|\left(q_{n}-r_{n}\right)\cdot2^{-n}\right|$
+\end_inset
+
+ אינה פונ' זניחה, וזו סתירה לכך ש-
+\begin_inset Formula $F$
+\end_inset
+
+ היא
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\bar default
+\strikeout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+\lang english
+PRF
+\lang hebrew
+.
+ לכן 
+\begin_inset Formula $F'$
+\end_inset
+
+ היא
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\bar default
+\strikeout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+\lang english
+PRF
+\lang hebrew
+.
 \end_layout
 
-\begin_layout Remarks
+\begin_layout Standard
+בעזרת 
+\begin_inset Formula $F'$
+\end_inset
+
+ כזאת, נבנה מבחין 
+\begin_inset Formula $D$
+\end_inset
+
+ ל-
 \begin_inset Formula $G$
 \end_inset
 
- אינו
+: בהינתן קלט 
+\begin_inset Formula $s\in\left\{ 0,1\right\} ^{2n}$
+\end_inset
+
+, 
+\begin_inset Formula $D$
+\end_inset
+
+ יחזיר
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\numeric on
+\bar default
+\strikeout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+1
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\numeric off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\bar default
+\strikeout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+אם"ם 
+\begin_inset Formula $s=0^{2n}$
+\end_inset
+
+.
+ נשים לב ש-
+\begin_inset Formula $D$
+\end_inset
+
+ יחזיר
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\numeric on
+\bar default
+\strikeout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+1
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\numeric off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\bar default
+\strikeout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+על 
+\begin_inset Formula $G\left(s\right)$
+\end_inset
+
+, לכל 
+\begin_inset Formula $s\in\left\{ 0,1\right\} ^{n}$
+\end_inset
+
+, כלומר 
+\begin_inset Formula $\Pr\left[D\left(G\left(U_{n}\right)\right)=1\right]=1$
+\end_inset
+
+.
+ כמוכן עבור ערך 
+\begin_inset Formula $r\leftarrow\left\{ 0,1\right\} ^{2n}$
+\end_inset
+
+, 
+\begin_inset Formula $D$
+\end_inset
+
+ יחזיר
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\numeric on
+\bar default
+\strikeout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+1
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\numeric off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\bar default
+\strikeout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+בהסתברות בה 
+\begin_inset Formula $r=0^{2n}$
+\end_inset
+
+ שהיא 
+\begin_inset Formula $2^{-2n}$
+\end_inset
+
+.
+ לכן: 
+\begin_inset Formula 
+\begin{align*}
+ & \left|\Pr_{s\leftarrow\left\{ 0,1\right\} ^{n}}\left[D\left(G\left(s\right)\right)=1\right]-\Pr_{r\leftarrow\left\{ 0,1\right\} ^{2n}}\left[D\left(r\right)=1\right]\right|\\
+= & \left|1-\Pr_{r\leftarrow\left\{ 0,1\right\} ^{2n}}\left[r=0^{2n}\right]\right|\\
+= & \left|1-2^{-2n}\right|=1-2^{-2n}>\frac{1}{n}
+\end{align*}
+
+\end_inset
+
+עבור אינסוף 
+\begin_inset Formula $n$
+\end_inset
+
+, כלומר 
+\begin_inset Formula $G$
+\end_inset
+
+ אינה
 \family roman
 \series medium
 \shape up
@@ -2651,27 +3322,6 @@ PRG
 PRG
 \lang hebrew
 .
- נבנה מבחין 
-\begin_inset Formula $D$
-\end_inset
-
- הפועל כך: בהינתן קלט 
-\begin_inset Formula $s$
-\end_inset
-
- באורך 
-\begin_inset Formula $n$
-\end_inset
-
- ביטים, 
-\begin_inset Formula $D$
-\end_inset
-
- יחשב את 
-\begin_inset Formula $F_{0^{n}}\left(s\right)$
-\end_inset
-
-
 \end_layout
 
 \end_body
