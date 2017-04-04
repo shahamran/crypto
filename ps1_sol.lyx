@@ -2885,6 +2885,40 @@ PRF
 \end_layout
 
 \begin_layout Standard
+\begin_inset Formula $G$
+\end_inset
+
+ אינו בהכרח
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\bar default
+\strikeout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+\lang english
+PRG
+\lang hebrew
+.
+\end_layout
+
+\begin_layout Standard
 נגדיר פונ' 
 \begin_inset Formula $F'$
 \end_inset
@@ -3031,7 +3065,11 @@ PRF
 \lang english
 PRF
 \lang hebrew
-.
+, כי בחישוב הנ"ל אפשר לראות ש-
+\begin_inset Formula $B$
+\end_inset
+
+ מבחין יעיל עבורה.
  לכן 
 \begin_inset Formula $F'$
 \end_inset
@@ -3067,11 +3105,43 @@ PRF
 \end_layout
 
 \begin_layout Standard
-בעזרת 
-\begin_inset Formula $F'$
+נטען עתה ש-
+\begin_inset Formula $G$
 \end_inset
 
- כזאת, נבנה מבחין 
+ המוגדר על ידי 
+\begin_inset Formula $G\left(s\right)=F'_{0^{n}}\left(s\right)$
+\end_inset
+
+ אינו
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\bar default
+\strikeout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+\lang english
+PRG
+\lang hebrew
+.
+ נבנה מבחין 
 \begin_inset Formula $D$
 \end_inset
 
