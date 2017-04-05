@@ -2821,6 +2821,56 @@ status open
 \end_layout
 
 \begin_layout Standard
+\begin_inset Formula $D$
+\end_inset
+
+ פועל בזמן פולינומיאלי בקלט כי 
+\begin_inset Formula $B$
+\end_inset
+
+ מבצע מס' פולינומאלי ב-
+\begin_inset Formula $n$
+\end_inset
+
+ של קריאות לאורקל, כאשר כל אחת מהן "מטופלת" בזמן פולינומיאלי - כי 
+\begin_inset Formula $D$
+\end_inset
+
+ מבצע חישוב של 
+\begin_inset Formula $F$
+\end_inset
+
+ עם מפתח וקלט ידועים ומבצע
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\bar default
+\strikeout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+\lang english
+XOR
+\lang hebrew
+ )והרכבת פולינומים היא פולינום(.
+\end_layout
+
+\begin_layout Standard
 נשים לב שלכל 
 \begin_inset Formula $n\in\mathbb{N}$
 \end_inset
