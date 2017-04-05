@@ -933,6 +933,76 @@ PRG
 5
 \end_layout
 
+\begin_layout Lemma
+\begin_inset CommandInset label
+LatexCommand label
+name "lem:negl-poly"
+
+\end_inset
+
+לכל פונ' זניחה 
+\begin_inset Formula $\nu:\mathbb{N}\to\mathbb{R}$
+\end_inset
+
+ ולכל פולינום 
+\begin_inset Formula $p:\mathbb{N}\to\mathbb{R}_{+}$
+\end_inset
+
+, הפונקציה המוגדרת על ידי 
+\begin_inset Formula $q\left(n\right)=\frac{1}{p\left(n\right)}+\nu\left(n\right)$
+\end_inset
+
+ 
+\emph on
+אינה
+\emph default
+ זניחה
+\end_layout
+
+\begin_layout Proof
+\begin_inset Formula $\nu$
+\end_inset
+
+ זניחה, לכן קיים 
+\begin_inset Formula $N\in\mathbb{N}$
+\end_inset
+
+ כך שלכל 
+\begin_inset Formula $n>N$
+\end_inset
+
+ מתקיים: 
+\begin_inset Formula 
+\begin{align*}
+\left|\nu\left(n\right)\right| & \le\frac{1}{2p\left(n\right)}\iff-\frac{1}{2p\left(n\right)}\le\nu\left(n\right)\le\frac{1}{2p\left(n\right)}\\
+\iff & \frac{1}{2p\left(n\right)}\le\nu\left(n\right)+\frac{1}{p\left(n\right)}\le\frac{3}{2p\left(n\right)}
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Proof
+ו-
+\begin_inset Formula $2p\left(n\right)$
+\end_inset
+
+ הוא פולינום, לכן לכל 
+\begin_inset Formula $n>N$
+\end_inset
+
+ מתקיים ש-
+\begin_inset Formula $q\left(n\right)\ge\frac{1}{2p\left(n\right)}$
+\end_inset
+
+ ולכן 
+\begin_inset Formula $q$
+\end_inset
+
+ אינה זניחה.
+\end_layout
+
 \begin_layout Standard
 נגדיר את 
 \begin_inset Formula $H$
@@ -1040,19 +1110,43 @@ PRG
 \end_layout
 
 \begin_layout Standard
-נטען ש-
+נשים לב ש-
+\begin_inset Formula $\left(r-q\right)2^{-n}$
+\end_inset
+
+ זניחה )כי 
+\begin_inset Formula $r-q$
+\end_inset
+
+ חסומה ב-
+\begin_inset Formula $\pm1$
+\end_inset
+
+ ו-
+\begin_inset Formula $2^{-n}$
+\end_inset
+
+ זניחה( ולכן לפי 
+\begin_inset CommandInset ref
+LatexCommand formatted
+reference "lem:negl-poly"
+
+\end_inset
+
+ גם 
 \begin_inset Formula $\left(r-q\right)2^{-n}+\frac{1}{p\left(n\right)}$
 \end_inset
 
- אינה זניחה ובכך נקבל ש-
+ לא זניחה.
+ מכאן ש-
 \begin_inset Formula $D$
 \end_inset
 
- מבחין יעיל ל-
+ מבחין בסיכוי לא זניח קלטים מ-
 \begin_inset Formula $G$
 \end_inset
 
- בסתירה לכך ש-
+, בסתירה לכך ש-
 \begin_inset Formula $G$
 \end_inset
 
@@ -1084,45 +1178,6 @@ PRG
 PRG
 \lang hebrew
 .
-\end_layout
-
-\begin_layout Standard
-מכיוון ש-
-\begin_inset Formula $\left(r-q\right)2^{-n}$
-\end_inset
-
- זניחה )כי 
-\begin_inset Formula $r-q$
-\end_inset
-
- חסומה ב-
-\begin_inset Formula $\pm1$
-\end_inset
-
- ו-
-\begin_inset Formula $2^{-n}$
-\end_inset
-
- זניחה(, קיים 
-\begin_inset Formula $n_{0}$
-\end_inset
-
- כך שלכל 
-\begin_inset Formula $n>n_{0}$
-\end_inset
-
- מתקיים: 
-\begin_inset Formula 
-\begin{align*}
- & \left|\left(r-q\right)2^{-n}\right|<\frac{1}{2p\left(n\right)}\\
-\iff & -\left|\left(r-q\right)2^{-n}\right|>-\frac{1}{2p\left(n\right)}\\
-\iff & \frac{1}{p\left(n\right)}-\left|\left(r-q\right)2^{-n}\right|>\frac{1}{2p\left(n\right)}\\
-\implies & \frac{1}{p\left(n\right)}+\left(r-q\right)2^{-n}\ge\frac{1}{p\left(n\right)}-\left|\left(r-q\right)2^{-n}\right|>\frac{1}{2p\left(n\right)}
-\end{align*}
-
-\end_inset
-
-כלומר הפונ' אינה זניחה כנדרש.
 \end_layout
 
 \begin_layout Section*
@@ -2191,42 +2246,6 @@ PRF
 1
 \end_layout
 
-\begin_layout Remarks
-המבחין 
-\begin_inset Formula $D$
-\end_inset
-
- המתואר למטה מחשב את הערך 
-\begin_inset Formula $F_{1^{n}}\left(x\right)$
-\end_inset
-
-.
- זה בעייתי כי התיאור של 
-\begin_inset Formula $F$
-\end_inset
-
- הוא אקספוננציאלי ב-
-\begin_inset Formula $n$
-\end_inset
-
- )חייב להכיל מיפוי של כל ערך ב-
-\begin_inset Formula $\left\{ 0,1\right\} ^{n}$
-\end_inset
-
-( ולכן חישוב זה עלול להפוך את המבחין ללא-יעיל.
- לא הצלחתי להימנע מכך )אינטואיטיבית, עובדה זו רק מחזקת את הקושי בהבחנה של
- 
-\begin_inset Formula $H$
-\end_inset
-
- מפונ' אקראית(.
- בהינתן שחישוב זה יכול להתבצע ביעילות, גם המבחין 
-\begin_inset Formula $D$
-\end_inset
-
- ירוץ בזמן פולינומיאלי.
-\end_layout
-
 \begin_layout Standard
 \begin_inset Formula $H$
 \end_inset
@@ -2313,19 +2332,54 @@ PRF
 \end_inset
 
 .
- לכל בקשה לגישת אורקל לערך 
-\begin_inset Formula $x\in\left\{ 0,1\right\} ^{n}$
+ לכל בקשה של 
+\begin_inset Formula $B$
 \end_inset
 
- מ-
-\begin_inset Formula $B$
+ לגישת אורקל לערך 
+\begin_inset Formula $x\in\left\{ 0,1\right\} ^{n}$
 \end_inset
 
 , 
 \begin_inset Formula $D$
 \end_inset
 
- יחשב את 
+ יחשב
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+זה אפשרי כי תיאור 
+\begin_inset Formula $F$
+\end_inset
+
+ הוא פומבי; אנחנו מניחים ש-
+\begin_inset Formula $F$
+\end_inset
+
+ ניתנת לחישוב יעיל.
+ כלומר, בהינתן קלט 
+\begin_inset Formula $k,x\in\left\{ 0,1\right\} ^{n}$
+\end_inset
+
+, אפשר לחשב את 
+\begin_inset Formula $F_{k}\left(x\right)$
+\end_inset
+
+ בזמן פולינומיאלי ב-
+\begin_inset Formula $n$
+\end_inset
+
+, לכל 
+\begin_inset Formula $n\in\mathbb{N}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+ את 
 \begin_inset Formula $F_{1^{n}}\left(x\right)$
 \end_inset
 
@@ -2337,15 +2391,7 @@ PRF
 \begin_inset Formula ${\cal O}\left(x\right)\oplus F_{1^{n}}\left(x\right)$
 \end_inset
 
- )זה אפשרי כי תיאור 
-\begin_inset Formula $F$
-\end_inset
-
- הוא פומבי; וזה בעייתי כי תיאור 
-\begin_inset Formula $F$
-\end_inset
-
- הוא ענק(.
+.
  
 \begin_inset Formula $D$
 \end_inset
@@ -2443,8 +2489,8 @@ PRF
 \begin_inset Formula ${\cal O}=F_{k}$
 \end_inset
 
- עבור 
-\begin_inset Formula $k\ot\left\{ 0,1\right\} ^{n}$
+ ועבור 
+\begin_inset Formula $k\in\left\{ 0,1\right\} ^{n}$
 \end_inset
 
 , 
@@ -2691,7 +2737,14 @@ PRF
 \begin_inset Formula $\frac{1}{p\left(n\right)}-\left|\left(q_{n}-r_{n}\right)\cdot2^{-n}\right|$
 \end_inset
 
- אינה פונ' זניחה, וזו סתירה לכך ש-
+ אינה פונ' זניחה מ-
+\begin_inset CommandInset ref
+LatexCommand formatted
+reference "lem:negl-poly"
+
+\end_inset
+
+, וזו סתירה לכך ש-
 \begin_inset Formula $F$
 \end_inset
 
@@ -4005,7 +4058,21 @@ PRF
 \uwave default
 \noun default
 \color inherit
-נקבל שהמערכת המתוארת בסעיף היא בדיוק המתוארת בכיתה, ולכן בטוחה כפי שהוכחנו.
+נקבל שהמערכת המתוארת בסעיף היא בדיוק המתוארת בכיתה,
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+כי: 
+\begin_inset Formula $\left(r,H_{k}\left(r\right)\oplus m\right)=\left(r,\left(F_{k}\left(r\right)\oplus r\right)\oplus m\right)=\left(r,r\oplus F_{k}\left(r\right)\oplus m\right)$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+ ולכן בטוחה כפי שהוכחנו.
 \end_layout
 
 \begin_layout Standard
