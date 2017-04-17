@@ -1,0 +1,1186 @@
+#LyX 2.2 created this file. For more info see http://www.lyx.org/
+\lyxformat 508
+\begin_document
+\begin_header
+\save_transient_properties true
+\origin unavailable
+\textclass heb-article
+\use_default_options true
+\maintain_unincluded_children false
+\language hebrew
+\language_package default
+\inputencoding auto
+\fontencoding global
+\font_roman "default" "default"
+\font_sans "default" "default"
+\font_typewriter "default" "default"
+\font_math "auto" "auto"
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100 100
+\font_tt_scale 100 100
+\graphics default
+\default_output_format default
+\output_sync 1
+\bibtex_command default
+\index_command default
+\paperfontsize default
+\spacing single
+\use_hyperref false
+\papersize default
+\use_geometry true
+\use_package amsmath 1
+\use_package amssymb 1
+\use_package cancel 1
+\use_package esint 1
+\use_package mathdots 1
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification false
+\use_refstyle 1
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\leftmargin 1.5cm
+\topmargin 1.5cm
+\rightmargin 1.5cm
+\bottommargin 1.5cm
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation skip
+\defskip smallskip
+\quotes_language english
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Standard
+\begin_inset FormulaMacro
+\newcommand{\ME}{{\cal M}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\KE}{{\cal K}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\Prc}[2]{\Pr\left[#1\middle|#2\right]}
+{\Pr\left[#1\mid#2\right]}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\CY}{{\cal C}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\Ad}{{\cal A}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\Neg}{\nu\left(n\right)}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\ind}{\Pr\left[\text{IND}_{\Pi,\Ad}\left(n\right)=1\right]}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\func}[1]{\text{Func}_{#1}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\ot}{\leftarrow}
+\end_inset
+
+
+\end_layout
+
+\begin_layout Title
+מבוא לקריפטוגרפיה ואבטחת תוכנה
+\begin_inset Newline newline
+\end_inset
+
+תרגיל
+\family roman
+\series medium
+\shape up
+\size largest
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\numeric on
+\bar default
+\strikeout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+2
+\end_layout
+
+\begin_layout Author
+רן שחם -
+\family roman
+\series medium
+\shape up
+\size large
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\numeric on
+\bar default
+\strikeout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+203781000
+\end_layout
+
+\begin_layout Standard
+\begin_inset FormulaMacro
+\newcommand{\mac}[1]{\text{Mac}\left(#1\right)}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\xor}{\oplus}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\vrfy}[1]{\text{Vrfy}\left(#1\right)}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\macf}{\text{Mac-Forge}_{\Ad,\Pi}\left(n\right)}
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section*
+שאלה
+\family roman
+\series bold
+\shape up
+\size larger
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\numeric on
+\bar default
+\strikeout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+1
+\end_layout
+
+\begin_layout Standard
+עבור כל ניסוי, נסמן ב-
+\begin_inset Formula $\mathcal{Q}$
+\end_inset
+
+ את קב' השאילתות של היריב את האורקל 
+\begin_inset Formula $\mac{\cdot}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Subsection*
+סעיף
+\family roman
+\series bold
+\shape up
+\size large
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\numeric on
+\bar default
+\strikeout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+1
+\end_layout
+
+\begin_layout Standard
+נבנה יריב 
+\begin_inset Formula $\Ad$
+\end_inset
+
+ הפועל כך: בהינתן קלט 
+\begin_inset Formula $1^{n}$
+\end_inset
+
+ וגישת אורקל ל-
+\begin_inset Formula $\mac{\cdot}$
+\end_inset
+
+, יחשב את 
+\begin_inset Formula $t=\mac{0^{n}||1^{n}}$
+\end_inset
+
+ ויפלוט 
+\begin_inset Formula $\left(m,t\right)$
+\end_inset
+
+ כאשר 
+\begin_inset Formula $m=1^{n}||0^{n}$
+\end_inset
+
+.
+ נשים לב ש-
+\begin_inset Formula $m\notin\mathcal{Q}$
+\end_inset
+
+ כי 
+\begin_inset Formula $\mathcal{Q}=\left\{ 0^{n}||1^{n}\right\} $
+\end_inset
+
+.
+ כמוכן, 
+\begin_inset Formula $t=F_{k}\left(1^{n}\right)\oplus F_{k}\left(0^{n}\right)=F_{k}\left(0^{n}\right)\xor F_{k}\left(1^{n}\right)$
+\end_inset
+
+ ולכן 
+\begin_inset Formula $t$
+\end_inset
+
+ הוא תיוג תקף עבור 
+\begin_inset Formula $m$
+\end_inset
+
+ - כלומר 
+\begin_inset Formula $\vrfy{m,t}=1$
+\end_inset
+
+.
+ לכן 
+\begin_inset Formula $\Pr\left[\macf=1\right]=1$
+\end_inset
+
+ ולכן המערכת אינה בטוחה.
+\end_layout
+
+\begin_layout Subsection*
+סעיף
+\family roman
+\series bold
+\shape up
+\size large
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\numeric on
+\bar default
+\strikeout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+2
+\end_layout
+
+\begin_layout Standard
+בהינתן קלט 
+\begin_inset Formula $1^{n}$
+\end_inset
+
+ וגישת אורקל, 
+\begin_inset Formula $\Ad$
+\end_inset
+
+ יחשב את 
+\begin_inset Formula $t=\mac{0^{\nicefrac{n}{2}}||1^{\nicefrac{n}{2}}}$
+\end_inset
+
+.
+ נגדיר 
+\begin_inset Formula $t'=t\left[0\dots n-1\right]$
+\end_inset
+
+ כלומר 
+\begin_inset Formula $t'$
+\end_inset
+
+ הוא 
+\begin_inset Formula $n$
+\end_inset
+
+ הביטים הראשונים ב-
+\begin_inset Formula $t$
+\end_inset
+
+.
+ 
+\begin_inset Formula $\Ad$
+\end_inset
+
+ יפלוט 
+\begin_inset Formula $\left(0^{\nicefrac{n}{2}},t'\right)$
+\end_inset
+
+.
+ ברור ש-
+\begin_inset Formula $0^{\nicefrac{n}{2}}\notin\mathcal{Q}$
+\end_inset
+
+ וכן ש-
+\begin_inset Formula $t'=t\left[0\dots n-1\right]=F_{k}\left(\left\langle 1\right\rangle ||0^{\nicefrac{n}{2}}\right)$
+\end_inset
+
+ הוא תיוג תקף עבור 
+\begin_inset Formula $0^{\nicefrac{n}{2}}$
+\end_inset
+
+ ולכן 
+\begin_inset Formula $\Pr\left[\macf=1\right]=1$
+\end_inset
+
+ והמערכת אינה בטוחה.
+\end_layout
+
+\begin_layout Subsection*
+סעיף
+\family roman
+\series bold
+\shape up
+\size large
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\numeric on
+\bar default
+\strikeout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+3
+\end_layout
+
+\begin_layout Standard
+בהינתן קלט 
+\begin_inset Formula $1^{n}$
+\end_inset
+
+ 
+\begin_inset Formula $\Ad$
+\end_inset
+
+ יחשב 
+\begin_inset Formula $\left(r,t_{1}\right)=\mac{0^{n}}$
+\end_inset
+
+ ו-
+\begin_inset Formula $\left(s,t_{2}\right)=\mac{0^{n}}$
+\end_inset
+
+ ויפלוט 
+\begin_inset Formula $\left(r,\left(s,t_{3}\right)\right)$
+\end_inset
+
+ כאשר 
+\begin_inset Formula $t_{3}=t_{1}\xor t_{2}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+כמובן ש-
+\begin_inset Formula $r\notin\mathcal{Q}=\left\{ 0^{n}\right\} $
+\end_inset
+
+.
+ כמוכן 
+\begin_inset Formula $t_{1}=F_{k}\left(r\right)\xor F_{k}\left(0^{n}\right)$
+\end_inset
+
+ ו-
+\begin_inset Formula $t_{2}=F_{k}\left(s\right)\xor F_{k}\left(0^{n}\right)$
+\end_inset
+
+ ולכן: 
+\begin_inset Formula 
+\[
+t_{3}=t_{1}\xor t_{2}=\left(F_{k}\left(r\right)\xor F_{k}\left(0^{n}\right)\right)\xor\left(F_{k}\left(s\right)\xor F_{k}\left(0^{n}\right)\right)=F_{k}\left(r\right)\xor F_{k}\left(s\right)
+\]
+
+\end_inset
+
+ומכאן ש-
+\begin_inset Formula $\vrfy{r,\left(s,t_{3}\right)}=1$
+\end_inset
+
+ ולכן המערכת אינה בטוחה.
+\end_layout
+
+\begin_layout Section*
+שאלה
+\family roman
+\series bold
+\shape up
+\size larger
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\numeric on
+\bar default
+\strikeout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+2
+\end_layout
+
+\begin_layout Section*
+שאלה
+\family roman
+\series bold
+\shape up
+\size larger
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\numeric on
+\bar default
+\strikeout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+3
+\end_layout
+
+\begin_layout Section*
+שאלה
+\family roman
+\series bold
+\shape up
+\size larger
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\numeric on
+\bar default
+\strikeout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+4
+\end_layout
+
+\begin_layout Standard
+המערכת אינה בטוחה.
+ יהי 
+\begin_inset Formula $H$
+\end_inset
+
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\bar default
+\strikeout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+\lang english
+PRG
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+\lang hebrew
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\bar default
+\strikeout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+מכפיל אורך.
+ נגדיר: 
+\begin_inset Formula 
+\[
+G\left(s_{1}||s_{2}\right)=H\left(s_{1}\right)||H\left(s_{2}\right)
+\]
+
+\end_inset
+
+כאשר 
+\begin_inset Formula $s_{1}\in\left\{ \left|s_{2}\right|,\left|s_{2}\right|+1\right\} $
+\end_inset
+
+.
+ מהתרגיל הקודם, 
+\begin_inset Formula $G$
+\end_inset
+
+ הוא
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\bar default
+\strikeout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+\lang english
+PRG
+\lang hebrew
+.
+\end_layout
+
+\begin_layout Standard
+נבנה יריב 
+\begin_inset Formula $\Ad$
+\end_inset
+
+ הפועל כך: בהינתן קלט 
+\begin_inset Formula $1^{n}$
+\end_inset
+
+ וגישת אורקל ל-
+\begin_inset Formula $\mac{\cdot}$
+\end_inset
+
+, יחשב את 
+\begin_inset Formula $t=\mac{0^{n}}$
+\end_inset
+
+ וכן את 
+\begin_inset Formula $H\left(1^{n}\right)$
+\end_inset
+
+.
+ נגדיר 
+\begin_inset Formula $t'=t\left[0\dots2n-1\right]$
+\end_inset
+
+ כלומר 
+\begin_inset Formula $t'$
+\end_inset
+
+ הוא 
+\begin_inset Formula $2n$
+\end_inset
+
+ הביטים הראשונים של 
+\begin_inset Formula $t$
+\end_inset
+
+.
+ לבסוף 
+\begin_inset Formula $\Ad$
+\end_inset
+
+ יפלוט 
+\begin_inset Formula $\left(1^{n},t'||H\left(1^{n}\right)\right)$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+נשים לב: 
+\begin_inset Formula 
+\begin{align*}
+t & =\mac{0^{n}}=G\left(k||0^{n}\right)=H\left(k\right)||H\left(0^{n}\right)\\
+t' & =t\left[0\dots2n-1\right]=H\left(k\right)\\
+t'||H\left(1^{n}\right) & =H\left(k\right)||H\left(1^{n}\right)=G\left(k||1^{n}\right)=\mac{1^{n}}\\
+1^{n} & \notin\mathcal{Q}=\left\{ 0^{n}\right\} 
+\end{align*}
+
+\end_inset
+
+ולכן 
+\begin_inset Formula $\Ad$
+\end_inset
+
+ מצליח בסיכוי 
+\begin_inset Formula $1$
+\end_inset
+
+, כלומר המערכת אינה בטוחה.
+\end_layout
+
+\begin_layout Subsection*
+סעיף
+\family roman
+\series bold
+\shape up
+\size large
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\numeric on
+\bar default
+\strikeout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+1
+\end_layout
+
+\begin_layout Subsection*
+סעיף
+\family roman
+\series bold
+\shape up
+\size large
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\numeric on
+\bar default
+\strikeout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+2
+\end_layout
+
+\begin_layout Section*
+שאלה
+\family roman
+\series bold
+\shape up
+\size larger
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\numeric on
+\bar default
+\strikeout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+5
+\end_layout
+
+\begin_layout Section*
+שאלה
+\family roman
+\series bold
+\shape up
+\size larger
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\numeric on
+\bar default
+\strikeout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+6
+\end_layout
+
+\begin_layout Section*
+שאלה
+\family roman
+\series bold
+\shape up
+\size larger
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\numeric on
+\bar default
+\strikeout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+7
+\end_layout
+
+\begin_layout Subsection*
+סעיף
+\family roman
+\series bold
+\shape up
+\size large
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\numeric on
+\bar default
+\strikeout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+1
+\end_layout
+
+\begin_layout Subsection*
+סעיף
+\family roman
+\series bold
+\shape up
+\size large
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\numeric on
+\bar default
+\strikeout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+2
+\end_layout
+
+\begin_layout Section*
+שאלה
+\family roman
+\series bold
+\shape up
+\size larger
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\numeric on
+\bar default
+\strikeout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+8
+\end_layout
+
+\begin_layout Subsection*
+סעיף
+\family roman
+\series bold
+\shape up
+\size large
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\numeric on
+\bar default
+\strikeout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+1
+\end_layout
+
+\begin_layout Subsection*
+סעיף
+\family roman
+\series bold
+\shape up
+\size large
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\numeric on
+\bar default
+\strikeout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+2
+\end_layout
+
+\begin_layout Section*
+שאלה
+\family roman
+\series bold
+\shape up
+\size larger
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\numeric on
+\bar default
+\strikeout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+9
+\end_layout
+
+\begin_layout Subsection*
+סעיף
+\family roman
+\series bold
+\shape up
+\size large
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\numeric on
+\bar default
+\strikeout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+1
+\end_layout
+
+\begin_layout Subsection*
+סעיף
+\family roman
+\series bold
+\shape up
+\size large
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\numeric on
+\bar default
+\strikeout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+2
+\end_layout
+
+\begin_layout Subsection*
+סעיף
+\family roman
+\series bold
+\shape up
+\size large
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\numeric on
+\bar default
+\strikeout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+3
+\end_layout
+
+\end_body
+\end_document
