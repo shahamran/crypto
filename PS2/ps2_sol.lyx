@@ -188,7 +188,7 @@
 
 \begin_layout Standard
 \begin_inset FormulaMacro
-\newcommand{\mac}[1]{\text{Mac}\left(#1\right)}
+\newcommand{\mac}[2][]{\text{Mac}_{#1}\left(#2\right)}
 \end_inset
 
 
@@ -203,7 +203,7 @@
 
 
 \begin_inset FormulaMacro
-\newcommand{\macf}{\text{Mac-Forge}_{\Ad,\Pi}\left(n\right)}
+\newcommand{\macf}{\text{MacForge}_{\Ad,\Pi}\left(n\right)}
 \end_inset
 
 
@@ -704,7 +704,12 @@ PRG
 \end_layout
 
 \begin_layout Standard
-נבנה יריב 
+יהי 
+\begin_inset Formula $\left\{ 0,1\right\} ^{n}\ni k\ot\text{Gen}\left(1^{n}\right)$
+\end_inset
+
+.
+ נבנה יריב 
 \begin_inset Formula $\Ad$
 \end_inset
 
@@ -892,6 +897,180 @@ t'||H\left(1^{n}\right) & =H\left(k\right)||H\left(1^{n}\right)=G\left(k||1^{n}\
 6
 \end_layout
 
+\begin_layout Standard
+נניח בשלילה ש-
+\begin_inset Formula $\Pi$
+\end_inset
+
+ אינה בטוחה, כלומר שקיימים יריב 
+\begin_inset Formula $\Ad$
+\end_inset
+
+ ופולינום 
+\begin_inset Formula $p$
+\end_inset
+
+ כך ש: 
+\begin_inset Formula 
+\[
+\Pr\left[\macf=1\right]>\frac{1}{p\left(n\right)}
+\]
+
+\end_inset
+
+לאינסוף 
+\begin_inset Formula $n\in\mathbb{N}$
+\end_inset
+
+.
+ מובטח שאחת מהמערכות 
+\begin_inset Formula $\Pi_{1},\Pi_{2}$
+\end_inset
+
+ היא בטוחה.
+ נניח בה"כ ש-
+\begin_inset Formula $\Pi_{1}$
+\end_inset
+
+ היא מערכת בטוחה, ונראה יריב 
+\begin_inset Formula $\Ad_{1}$
+\end_inset
+
+ ש"שובר" אותה בסיכוי לא זניח.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $\Ad_{1}$
+\end_inset
+
+ יפעל כך: בהינתן קלט 
+\begin_inset Formula $1^{n}$
+\end_inset
+
+ וגישת אורקל ל-
+\begin_inset Formula $\mac[1]{k_{1},\cdot}$
+\end_inset
+
+ עבור 
+\begin_inset Formula $k_{1}\ot\text{Gen}_{1}\left(1^{n}\right)$
+\end_inset
+
+, ידגום 
+\begin_inset Formula $k_{2}\ot\text{Gen}_{2}\left(1^{n}\right)$
+\end_inset
+
+ ויסמלץ את ריצת 
+\begin_inset Formula $\Ad$
+\end_inset
+
+ עם הקלט 
+\begin_inset Formula $1^{n}$
+\end_inset
+
+.
+ עבור בקשה לגישת אורקל של 
+\begin_inset Formula $\Ad$
+\end_inset
+
+ להצפנת ההודעה 
+\begin_inset Formula $m$
+\end_inset
+
+, יחזיר לו 
+\begin_inset Formula $t=\mac[1]{k_{1},m}\xor\mac[2]{k_{2},m}$
+\end_inset
+
+, כאשר החלק הראשון מתקבל מהאורקל של 
+\begin_inset Formula $\Ad_{1}$
+\end_inset
+
+ והשני מחושב על ידו באופן ישיר.
+ לבסוף, 
+\begin_inset Formula $\Ad$
+\end_inset
+
+ יפלוט צמד 
+\begin_inset Formula $\left(m^{*},t^{*}\right)$
+\end_inset
+
+.
+ 
+\begin_inset Formula $\Ad_{1}$
+\end_inset
+
+ יחשב את 
+\begin_inset Formula $t'=t^{*}\xor\mac[2]{k_{2},m^{*}}$
+\end_inset
+
+ ויפלוט 
+\begin_inset Formula $\left(m^{*},t'\right)$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+נניח ש-
+\begin_inset Formula $\Ad$
+\end_inset
+
+ מצליח בניסוי, כלומר ש-
+\begin_inset Formula $t^{*}=\mac{k_{1}||k_{2},m^{*}}$
+\end_inset
+
+, לכן מהגדרת המערכת: 
+\begin_inset Formula 
+\[
+t^{*}=\mac[1]{k_{1},m^{*}}\xor\mac[2]{k_{2},m^{*}}
+\]
+
+\end_inset
+
+ולכן מתקיים: 
+\begin_inset Formula 
+\[
+t'=t^{*}\xor\mac[2]{k_{2},m^{*}}=\mac[1]{k_{1},m^{*}}
+\]
+
+\end_inset
+
+כי 
+\begin_inset Formula $\mac[2]{\cdot}$
+\end_inset
+
+ הוא אלגוריתם דטרמיניסטי.
+ לכן 
+\begin_inset Formula $\text{Vrfy}\left(k_{1}||k_{2},m^{*},t'\right)=1$
+\end_inset
+
+ ולכן בכל פעם ש-
+\begin_inset Formula $\Ad$
+\end_inset
+
+ מצליח בניסוי, כך גם 
+\begin_inset Formula $\Ad_{1}$
+\end_inset
+
+.
+ אם כך: 
+\begin_inset Formula 
+\[
+\Pr\left[\text{MacForge}_{\Ad_{1},\Pi_{1}}\left(n\right)=1\right]>\frac{1}{p\left(n\right)}
+\]
+
+\end_inset
+
+לאינסוף 
+\begin_inset Formula $n$
+\end_inset
+
+, בסתירה לכך ש-
+\begin_inset Formula $\Pi_{1}$
+\end_inset
+
+ בטוחה.
+\end_layout
+
 \begin_layout Section*
 שאלה
 \family roman
@@ -921,62 +1100,87 @@ t'||H\left(1^{n}\right) & =H\left(k\right)||H\left(1^{n}\right)=G\left(k||1^{n}\
 7
 \end_layout
 
-\begin_layout Subsection*
-סעיף
-\family roman
-\series bold
-\shape up
-\size large
-\emph off
-\bar no
-\strikeout off
-\uuline off
-\uwave off
-\noun off
-\color none
- 
-\family default
-\series default
-\shape default
-\size default
-\emph default
-\numeric on
-\bar default
-\strikeout default
-\uuline default
-\uwave default
-\noun default
-\color inherit
-1
+\begin_layout Standard
+יהיו 
+\begin_inset Formula $\ell_{1},\ell_{2}:\mathbb{N}\to\mathbb{N}$
+\end_inset
+
+ כך ש-
+\begin_inset Formula $H^{\left(i\right)}:\left\{ 0,1\right\} ^{*}\to\left\{ 0,1\right\} ^{\ell_{i}\left(n\right)}$
+\end_inset
+
+.
+ נניח בה"כ ש-
+\begin_inset Formula $\ell_{1}\left(n\right)\le\ell_{2}\left(n\right)$
+\end_inset
+
+ לכל 
+\begin_inset Formula $n$
+\end_inset
+
+.
 \end_layout
 
-\begin_layout Subsection*
-סעיף
-\family roman
-\series bold
-\shape up
-\size large
-\emph off
-\bar no
-\strikeout off
-\uuline off
-\uwave off
-\noun off
-\color none
- 
-\family default
-\series default
-\shape default
-\size default
-\emph default
-\numeric on
-\bar default
-\strikeout default
-\uuline default
-\uwave default
-\noun default
-\color inherit
-2
+\begin_layout Standard
+נבנה מערכת בטוחה באופן הבא:
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $\text{Gen}$
+\end_inset
+
+ מקבלת 
+\begin_inset Formula $1^{n}$
+\end_inset
+
+ ומחזירה 
+\begin_inset Formula $s=s_{1}||s_{2}$
+\end_inset
+
+ כאשר 
+\begin_inset Formula $s_{1}=\text{Gen}^{\left(1\right)}\left(1^{n}\right)$
+\end_inset
+
+ ו-
+\begin_inset Formula $s_{2}=\text{Gen}^{\left(2\right)}\left(1^{n}\right)$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $H$
+\end_inset
+
+ היא פונקצייה בהינתן קלט 
+\begin_inset Formula $s=s_{1}||s_{2}$
+\end_inset
+
+ ומספר 
+\begin_inset Formula $x$
+\end_inset
+
+ פולטת 
+\begin_inset Formula $H_{s_{1}}^{\left(1\right)'}\left(x\right)\xor H_{s_{2}}^{\left(2\right)}\left(x\right)$
+\end_inset
+
+ כאשר 
+\begin_inset Formula $H_{s_{1}}^{\left(1\right)'}=H_{s_{1}}^{\left(1\right)}\left(x\right)||0^{\ell_{2}\left(n\right)-\ell_{1}\left(n\right)}$
+\end_inset
+
+, כלומר הפלט שלה זהה לשל 
+\begin_inset Formula $H^{\left(1\right)}$
+\end_inset
+
+ ומרופד ב-
+\begin_inset Formula $0$
+\end_inset
+
+ים כך שיהיה באורך של הפלט של 
+\begin_inset Formula $H^{\left(2\right)}$
+\end_inset
+
+
 \end_layout
 
 \begin_layout Section*
