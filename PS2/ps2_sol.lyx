@@ -297,7 +297,7 @@
 \end_inset
 
  כלשהו, יחשב את 
-\begin_inset Formula $t=\mac[k]{0^{n}||1^{n}}$
+\begin_inset Formula $t=\mac[k]{0^{n}\|1^{n}}$
 \end_inset
 
  ויפלוט 
@@ -305,7 +305,7 @@
 \end_inset
 
  כאשר 
-\begin_inset Formula $m=1^{n}||0^{n}$
+\begin_inset Formula $m=1^{n}\|0^{n}$
 \end_inset
 
 .
@@ -314,7 +314,7 @@
 \end_inset
 
  כי 
-\begin_inset Formula $\mathcal{Q}=\left\{ 0^{n}||1^{n}\right\} $
+\begin_inset Formula $\mathcal{Q}=\left\{ 0^{n}\|1^{n}\right\} $
 \end_inset
 
 .
@@ -381,7 +381,7 @@
 \end_inset
 
  יחשב את 
-\begin_inset Formula $t=\mac{0^{\nicefrac{n}{2}}||1^{\nicefrac{n}{2}}}$
+\begin_inset Formula $t=\mac{0^{\nicefrac{n}{2}}\|1^{\nicefrac{n}{2}}}$
 \end_inset
 
 .
@@ -416,7 +416,7 @@
 \end_inset
 
  וכן ש-
-\begin_inset Formula $t'=t\left[0\dots n-1\right]=F_{k}\left(\left\langle 1\right\rangle ||0^{\nicefrac{n}{2}}\right)$
+\begin_inset Formula $t'=t\left[0\dots n-1\right]=F_{k}\left(\left\langle 1\right\rangle \|0^{\nicefrac{n}{2}}\right)$
 \end_inset
 
  הוא תיוג תקף עבור 
@@ -655,7 +655,7 @@ PRG
  נגדיר: 
 \begin_inset Formula 
 \[
-G\left(s_{1}||s_{2}\right)=H\left(s_{1}\right)||H\left(s_{2}\right)
+G\left(s_{1}\|s_{2}\right)=H\left(s_{1}\right)\|H\left(s_{2}\right)
 \]
 
 \end_inset
@@ -775,7 +775,7 @@ PRG
 \end_inset
 
  יפלוט 
-\begin_inset Formula $\left(1^{n},t'||H\left(1^{n}\right)\right)$
+\begin_inset Formula $\left(1^{n},t'\|H\left(1^{n}\right)\right)$
 \end_inset
 
 .
@@ -785,9 +785,9 @@ PRG
 נשים לב: 
 \begin_inset Formula 
 \begin{align*}
-t & =\mac[k]{0^{n}}=G\left(k||0^{n}\right)=H\left(k\right)||H\left(0^{n}\right)\\
+t & =\mac[k]{0^{n}}=G\left(k\|0^{n}\right)=H\left(k\right)\|H\left(0^{n}\right)\\
 t' & =t\left[0\dots2n-1\right]=H\left(k\right)\\
-t'||H\left(1^{n}\right) & =H\left(k\right)||H\left(1^{n}\right)=G\left(k||1^{n}\right)=\mac[k]{1^{n}}\\
+t'\|H\left(1^{n}\right) & =H\left(k\right)\|H\left(1^{n}\right)=G\left(k\|1^{n}\right)=\mac[k]{1^{n}}\\
 1^{n} & \notin\mathcal{Q}=\left\{ 0^{n}\right\} 
 \end{align*}
 
@@ -1252,7 +1252,7 @@ status open
 \end_inset
 
  מצליח בניסוי, כלומר ש-
-\begin_inset Formula $t^{*}=\mac{k_{1}||k_{2},m^{*}}$
+\begin_inset Formula $t^{*}=\mac{k_{1}\|k_{2},m^{*}}$
 \end_inset
 
 , לכן מהגדרת המערכת: 
@@ -1281,7 +1281,7 @@ t'=t^{*}\xor\mac[2]{k_{2},m^{*}}=\mac[1]{k_{1},m^{*}}
 
  תיתן את אותו ערך.
  לכן 
-\begin_inset Formula $\text{Vrfy}\left(k_{1}||k_{2},m^{*},t'\right)=1$
+\begin_inset Formula $\text{Vrfy}\left(k_{1}\|k_{2},m^{*},t'\right)=1$
 \end_inset
 
  ולכן בכל פעם ש-
@@ -1342,6 +1342,14 @@ t'=t^{*}\xor\mac[2]{k_{2},m^{*}}=\mac[1]{k_{1},m^{*}}
 \end_layout
 
 \begin_layout Standard
+\begin_inset FormulaMacro
+\newcommand{\hash}[1][]{\text{HashColl}_{#1}\left(n\right)}
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
 יהיו 
 \begin_inset Formula $\ell_{1},\ell_{2}:\mathbb{N}\to\mathbb{N}$
 \end_inset
@@ -1351,15 +1359,7 @@ t'=t^{*}\xor\mac[2]{k_{2},m^{*}}=\mac[1]{k_{1},m^{*}}
 \end_inset
 
 .
- נניח בה"כ ש-
-\begin_inset Formula $\ell_{1}\left(n\right)\le\ell_{2}\left(n\right)$
-\end_inset
-
- לכל 
-\begin_inset Formula $n$
-\end_inset
-
-.
+ 
 \end_layout
 
 \begin_layout Standard
@@ -1375,7 +1375,7 @@ t'=t^{*}\xor\mac[2]{k_{2},m^{*}}=\mac[1]{k_{1},m^{*}}
 \end_inset
 
  ומחזירה 
-\begin_inset Formula $s=s_{1}||s_{2}$
+\begin_inset Formula $s=s_{1}\|s_{2}$
 \end_inset
 
  כאשר 
@@ -1393,8 +1393,8 @@ t'=t^{*}\xor\mac[2]{k_{2},m^{*}}=\mac[1]{k_{1},m^{*}}
 \begin_inset Formula $H$
 \end_inset
 
- היא פונקצייה בהינתן קלט 
-\begin_inset Formula $s=s_{1}||s_{2}$
+ היא פונקצייה שבהינתן קלט 
+\begin_inset Formula $s=s_{1}\|s_{2}$
 \end_inset
 
  ומספר 
@@ -1402,26 +1402,123 @@ t'=t^{*}\xor\mac[2]{k_{2},m^{*}}=\mac[1]{k_{1},m^{*}}
 \end_inset
 
  פולטת 
-\begin_inset Formula $H_{s_{1}}^{\left(1\right)'}\left(x\right)\xor H_{s_{2}}^{\left(2\right)}\left(x\right)$
+\begin_inset Formula $H_{s_{1}}^{\left(1\right)}\left(x\right)\|H_{s_{2}}^{\left(2\right)}\left(x\right)$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+נניח בשלילה שהמערכת אינה בטוחה, כלומר שקיים יריב 
+\begin_inset Formula $\Ad$
+\end_inset
+
+ ופולינום 
+\begin_inset Formula $p$
+\end_inset
+
+ כך שמתקיים: 
+\begin_inset Formula 
+\[
+\Pr\left[\hash[\Ad,\Pi]=1\right]>\frac{1}{p\left(n\right)}
+\]
+
+\end_inset
+
+לאינסוף 
+\begin_inset Formula $n$
+\end_inset
+
+.
+ נניח בה"כ ש-
+\begin_inset Formula ${\cal H}^{\left(1\right)}$
+\end_inset
+
+ היא בטוחה.
+ נבנה יריב 
+\begin_inset Formula $\Ad_{1}$
+\end_inset
+
+ הפועל כך: בהינתן קלט 
+\begin_inset Formula $s_{1}$
+\end_inset
+
+, דוגם 
+\begin_inset Formula $s_{2}\ot\text{Gen}^{\left(2\right)}\left(1^{n}\right)$
+\end_inset
+
+ ומריץ את 
+\begin_inset Formula $\Ad$
+\end_inset
+
+ עם 
+\begin_inset Formula $s_{1}\|s_{2}$
+\end_inset
+
+.
+ לבסוף 
+\begin_inset Formula $\Ad$
+\end_inset
+
+ פולט 
+\begin_inset Formula $x,x'$
+\end_inset
+
+ וכך גם 
+\begin_inset Formula $\Ad_{1}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+נניח ש-
+\begin_inset Formula $\Ad$
+\end_inset
+
+ מצליח, כלומר ש-
+\begin_inset Formula $x'\neq x$
+\end_inset
+
+ ו-
+\begin_inset Formula $H_{s}\left(x\right)=H_{s}\left(x'\right)$
 \end_inset
 
  כאשר 
-\begin_inset Formula $H_{s_{1}}^{\left(1\right)'}=H_{s_{1}}^{\left(1\right)}\left(x\right)||0^{\ell_{2}\left(n\right)-\ell_{1}\left(n\right)}$
+\begin_inset Formula $s=s_{1}\|s_{2}$
 \end_inset
 
-, כלומר הפלט שלה זהה לשל 
-\begin_inset Formula $H^{\left(1\right)}$
+.
+ אם כך: 
+\begin_inset Formula 
+\[
+H_{s_{1}}\left(x\right)\|H_{s_{2}}\left(x\right)=H_{s_{1}}\left(x'\right)\|H_{s_{2}}\left(x'\right)
+\]
+
 \end_inset
 
- ומרופד ב-
-\begin_inset Formula $0$
+ובפרט, 
+\begin_inset Formula $H_{s_{1}}\left(x\right)=H_{s_{1}}\left(x'\right)$
 \end_inset
 
-ים כך שיהיה באורך של הפלט של 
-\begin_inset Formula $H^{\left(2\right)}$
+.
+ לכן 
+\begin_inset Formula 
+\[
+\Pr\left[\hash[\Ad_{1},\Pi_{1}]=1\right]\ge\Pr\left[\hash[\Ad,\Pi]=1\right]>\frac{1}{p\left(n\right)}
+\]
+
 \end_inset
 
+לאינסוף 
+\begin_inset Formula $n$
+\end_inset
 
+, בסתירה לכך ש-
+\begin_inset Formula $\Pi_{1}$
+\end_inset
+
+ עמידה בפני התנגשויות.
 \end_layout
 
 \end_body
