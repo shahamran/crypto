@@ -198,7 +198,7 @@
 
 
 \begin_inset FormulaMacro
-\newcommand{\vrfy}[1]{\text{Vrfy}\left(#1\right)}
+\newcommand{\vrfy}[2][]{\text{Vrfy}_{#1}\left(#2\right)}
 \end_inset
 
 
@@ -289,11 +289,15 @@
 \end_inset
 
  וגישת אורקל ל-
-\begin_inset Formula $\mac{\cdot}$
+\begin_inset Formula $\mac[k]{\cdot}$
 \end_inset
 
-, יחשב את 
-\begin_inset Formula $t=\mac{0^{n}||1^{n}}$
+ עבור 
+\begin_inset Formula $k\ot\text{Gen}\left(1^{n}\right)$
+\end_inset
+
+ כלשהו, יחשב את 
+\begin_inset Formula $t=\mac[k]{0^{n}||1^{n}}$
 \end_inset
 
  ויפלוט 
@@ -327,7 +331,7 @@
 \end_inset
 
  - כלומר 
-\begin_inset Formula $\vrfy{m,t}=1$
+\begin_inset Formula $\vrfy{k,\left(m,t\right)}=1$
 \end_inset
 
 .
@@ -465,11 +469,11 @@
 \end_inset
 
  יחשב 
-\begin_inset Formula $\left(r,t_{1}\right)=\mac{0^{n}}$
+\begin_inset Formula $\left(r,t_{1}\right)=\mac[k]{0^{n}}$
 \end_inset
 
  ו-
-\begin_inset Formula $\left(s,t_{2}\right)=\mac{0^{n}}$
+\begin_inset Formula $\left(s,t_{2}\right)=\mac[k]{0^{n}}$
 \end_inset
 
  ויפלוט 
@@ -509,15 +513,11 @@ t_{3}=t_{1}\xor t_{2}=\left(F_{k}\left(r\right)\xor F_{k}\left(0^{n}\right)\righ
 \begin_inset Formula $\vrfy{r,\left(s,t_{3}\right)}=1$
 \end_inset
 
- ולכן המערכת אינה בטוחה.
-\end_layout
-
-\begin_layout Section*
-שאלה
+ בסיכוי
 \family roman
-\series bold
+\series medium
 \shape up
-\size larger
+\size normal
 \emph off
 \bar no
 \strikeout off
@@ -538,16 +538,13 @@ t_{3}=t_{1}\xor t_{2}=\left(F_{k}\left(r\right)\xor F_{k}\left(0^{n}\right)\righ
 \uwave default
 \noun default
 \color inherit
-2
-\end_layout
-
-\begin_layout Section*
-שאלה
+1
 \family roman
-\series bold
+\series medium
 \shape up
-\size larger
+\size normal
 \emph off
+\numeric off
 \bar no
 \strikeout off
 \uuline off
@@ -560,14 +557,13 @@ t_{3}=t_{1}\xor t_{2}=\left(F_{k}\left(r\right)\xor F_{k}\left(0^{n}\right)\righ
 \shape default
 \size default
 \emph default
-\numeric on
 \bar default
 \strikeout default
 \uuline default
 \uwave default
 \noun default
 \color inherit
-3
+- לכן המערכת אינה בטוחה.
 \end_layout
 
 \begin_layout Section*
@@ -699,8 +695,35 @@ G\left(s_{1}||s_{2}\right)=H\left(s_{1}\right)||H\left(s_{2}\right)
 \color inherit
 \lang english
 PRG
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
 \lang hebrew
-.
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\bar default
+\strikeout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+וכן ברור ש-
+\begin_inset Formula $G$
+\end_inset
+
+ מכפיל אורך.
 \end_layout
 
 \begin_layout Standard
@@ -718,11 +741,11 @@ PRG
 \end_inset
 
  וגישת אורקל ל-
-\begin_inset Formula $\mac{\cdot}$
+\begin_inset Formula $\mac[k]{\cdot}$
 \end_inset
 
 , יחשב את 
-\begin_inset Formula $t=\mac{0^{n}}$
+\begin_inset Formula $t=\mac[k]{0^{n}}$
 \end_inset
 
  וכן את 
@@ -762,9 +785,9 @@ PRG
 נשים לב: 
 \begin_inset Formula 
 \begin{align*}
-t & =\mac{0^{n}}=G\left(k||0^{n}\right)=H\left(k\right)||H\left(0^{n}\right)\\
+t & =\mac[k]{0^{n}}=G\left(k||0^{n}\right)=H\left(k\right)||H\left(0^{n}\right)\\
 t' & =t\left[0\dots2n-1\right]=H\left(k\right)\\
-t'||H\left(1^{n}\right) & =H\left(k\right)||H\left(1^{n}\right)=G\left(k||1^{n}\right)=\mac{1^{n}}\\
+t'||H\left(1^{n}\right) & =H\left(k\right)||H\left(1^{n}\right)=G\left(k||1^{n}\right)=\mac[k]{1^{n}}\\
 1^{n} & \notin\mathcal{Q}=\left\{ 0^{n}\right\} 
 \end{align*}
 
@@ -779,64 +802,6 @@ t'||H\left(1^{n}\right) & =H\left(k\right)||H\left(1^{n}\right)=G\left(k||1^{n}\
 \end_inset
 
 , כלומר המערכת אינה בטוחה.
-\end_layout
-
-\begin_layout Subsection*
-סעיף
-\family roman
-\series bold
-\shape up
-\size large
-\emph off
-\bar no
-\strikeout off
-\uuline off
-\uwave off
-\noun off
-\color none
- 
-\family default
-\series default
-\shape default
-\size default
-\emph default
-\numeric on
-\bar default
-\strikeout default
-\uuline default
-\uwave default
-\noun default
-\color inherit
-1
-\end_layout
-
-\begin_layout Subsection*
-סעיף
-\family roman
-\series bold
-\shape up
-\size large
-\emph off
-\bar no
-\strikeout off
-\uuline off
-\uwave off
-\noun off
-\color none
- 
-\family default
-\series default
-\shape default
-\size default
-\emph default
-\numeric on
-\bar default
-\strikeout default
-\uuline default
-\uwave default
-\noun default
-\color inherit
-2
 \end_layout
 
 \begin_layout Section*
@@ -866,6 +831,278 @@ t'||H\left(1^{n}\right) & =H\left(k\right)||H\left(1^{n}\right)=G\left(k||1^{n}\
 \noun default
 \color inherit
 5
+\end_layout
+
+\begin_layout Standard
+נגדיר את האלגוריתמים הבאים:
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $\text{Gen}$
+\end_inset
+
+ מקבל 
+\begin_inset Formula $1^{n}$
+\end_inset
+
+ ומחזיר 
+\begin_inset Formula $k=k_{1}\|k_{2}$
+\end_inset
+
+ עבור 
+\begin_inset Formula $k_{i}\ot\text{Gen}_{i}\left(1^{n}\right)$
+\end_inset
+
+ ל-
+\begin_inset Formula $i=1,2$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $\text{Mac}$
+\end_inset
+
+ מקבל הודעה 
+\begin_inset Formula $m$
+\end_inset
+
+ ומפתח 
+\begin_inset Formula $k_{1}\|k_{2}$
+\end_inset
+
+ ומחזיר 
+\begin_inset Formula $t=t_{1}\|t_{2}$
+\end_inset
+
+ כאשר 
+\begin_inset Formula $t_{i}=\mac[k_{i}]m$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $\text{Vrfy}$
+\end_inset
+
+ מקבל 
+\begin_inset Formula $\left(m,t_{1}\|t_{2}\right)$
+\end_inset
+
+ ומפתח 
+\begin_inset Formula $k_{1}\|k_{2}$
+\end_inset
+
+ ומחזיר 
+\begin_inset Formula $1$
+\end_inset
+
+ אם"ם 
+\begin_inset Formula $\vrfy[1]{k_{1},\left(m,t_{1}\right)}=\vrfy[2]{k_{2},\left(m,t_{2}\right)}=1$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+נראה שהמערכת 
+\begin_inset Formula $\Pi$
+\end_inset
+
+ המוגדרת על ידי האלג' הנ"ל היא בטוחה.
+ נניח בשלילה שלא, כלומר שקיים יריב 
+\begin_inset Formula $\Ad$
+\end_inset
+
+ ופולינום 
+\begin_inset Formula $p$
+\end_inset
+
+ כך ש: 
+\begin_inset Formula 
+\[
+\Pr\left[\macf=1\right]>\frac{1}{p\left(n\right)}
+\]
+
+\end_inset
+
+לאינסוף ערכי 
+\begin_inset Formula $n\in\mathbb{N}$
+\end_inset
+
+.
+ מובטח שלפחות אחת מ-
+\begin_inset Formula $\Pi_{1},\Pi_{2}$
+\end_inset
+
+ היא בטוחה ונניח בה"כ ש-
+\begin_inset Formula $\Pi_{1}$
+\end_inset
+
+ היא בטוחה.
+ נגדיר יריב 
+\begin_inset Formula $\Ad_{1}$
+\end_inset
+
+ שפועל כך: בהינתן קלט 
+\begin_inset Formula $1^{n}$
+\end_inset
+
+ וגישת אורקל ל-
+\begin_inset Formula $\mac[1]{k_{1},\cdot}$
+\end_inset
+
+ עבור 
+\begin_inset Formula $k_{1}\ot\text{Gen}_{1}\left(1^{n}\right)$
+\end_inset
+
+ )שלא ידוע ל-
+\begin_inset Formula $\Ad_{1}$
+\end_inset
+
+(, ידגום 
+\begin_inset Formula $k_{2}\ot\text{Gen}_{2}\left(1^{n}\right)$
+\end_inset
+
+ ויריץ את 
+\begin_inset Formula $\Ad$
+\end_inset
+
+ עם 
+\begin_inset Formula $1^{n}$
+\end_inset
+
+.
+ לכל בקשה של 
+\begin_inset Formula $\Ad$
+\end_inset
+
+ עבור הצפנה של 
+\begin_inset Formula $m$
+\end_inset
+
+, 
+\begin_inset Formula $\Ad_{1}$
+\end_inset
+
+ יחזיר לו 
+\begin_inset Formula $\mac[1]{k_{1},m}\|\mac[2]{k_{2},m}$
+\end_inset
+
+ )הראשון מתקבל מהאורקל והשני ניתן לחישוב יעיל לפי הנחה(.
+ לבסוף 
+\begin_inset Formula $\Ad$
+\end_inset
+
+ יפלוט 
+\begin_inset Formula $\left(m^{*},t_{1}\|t_{2}\right)$
+\end_inset
+
+ ו-
+\begin_inset Formula $\Ad_{1}$
+\end_inset
+
+ יפלוט 
+\begin_inset Formula $\left(m^{*},t_{1}\right)$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Standard
+נשים לב ש-
+\begin_inset Formula $\Ad_{1}$
+\end_inset
+
+ מסמלץ בדיוק את הניסוי 
+\begin_inset Formula $\macf$
+\end_inset
+
+ עבור 
+\begin_inset Formula $\Ad$
+\end_inset
+
+, לכל 
+\begin_inset Formula $n\in\mathbb{N}$
+\end_inset
+
+.
+ נניח ש-
+\begin_inset Formula $\Ad$
+\end_inset
+
+ הצליח בניסוי כלומר ש-
+\begin_inset Formula $\macf=1$
+\end_inset
+
+ - לכן לפי הגדרה: 
+\begin_inset Formula $\vrfy{k_{1}\|k_{2},\left(m^{*},t_{1}\|t_{2}\right)}=1$
+\end_inset
+
+.
+ בפרט, לפי הגדרת 
+\begin_inset Formula $\text{Vrfy}$
+\end_inset
+
+, מתקיים: 
+\begin_inset Formula 
+\[
+\vrfy[1]{k_{1},\left(m^{*},t_{1}\right)}=1
+\]
+
+\end_inset
+
+ולכן 
+\begin_inset Formula $\text{MacForge}_{\Ad_{1},\Pi_{1}}\left(n\right)=1$
+\end_inset
+
+.
+ מכאן: 
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+ייתכן ש-
+\begin_inset Formula $\text{MacForge}_{\Ad_{1},\Pi_{1}}\left(n\right)=1$
+\end_inset
+
+ ו-
+\begin_inset Formula $\macf=0$
+\end_inset
+
+ - למשל אם 
+\begin_inset Formula $\Ad$
+\end_inset
+
+ נכשל בגלל ש- 
+\begin_inset Formula $\vrfy[2]{k_{2},\left(m^{*},t_{2}\right)}=0$
+\end_inset
+
+, לכן אי שווין מתקיים.
+\end_layout
+
+\end_inset
+
+
+\begin_inset Formula 
+\[
+\Pr\left[\text{MacForge}_{\Ad_{1},\Pi_{1}}\left(n\right)=1\right]\ge\Pr\left[\macf=1\right]>\frac{1}{p\left(n\right)}
+\]
+
+\end_inset
+
+לאינסוף 
+\begin_inset Formula $n$
+\end_inset
+
+, בסתירה לכך ש-
+\begin_inset Formula $\Pi_{1}$
+\end_inset
+
+ בטוחה.
 \end_layout
 
 \begin_layout Section*
@@ -1038,7 +1275,11 @@ t'=t^{*}\xor\mac[2]{k_{2},m^{*}}=\mac[1]{k_{1},m^{*}}
 \begin_inset Formula $\mac[2]{\cdot}$
 \end_inset
 
- הוא אלגוריתם דטרמיניסטי.
+ הוא אלגוריתם דטרמיניסטי, לכן כל הרצה שלו על 
+\begin_inset Formula $\left(k_{2},m^{*}\right)$
+\end_inset
+
+ תיתן את אותו ערך.
  לכן 
 \begin_inset Formula $\text{Vrfy}\left(k_{1}||k_{2},m^{*},t'\right)=1$
 \end_inset
@@ -1181,209 +1422,6 @@ t'=t^{*}\xor\mac[2]{k_{2},m^{*}}=\mac[1]{k_{1},m^{*}}
 \end_inset
 
 
-\end_layout
-
-\begin_layout Section*
-שאלה
-\family roman
-\series bold
-\shape up
-\size larger
-\emph off
-\bar no
-\strikeout off
-\uuline off
-\uwave off
-\noun off
-\color none
- 
-\family default
-\series default
-\shape default
-\size default
-\emph default
-\numeric on
-\bar default
-\strikeout default
-\uuline default
-\uwave default
-\noun default
-\color inherit
-8
-\end_layout
-
-\begin_layout Subsection*
-סעיף
-\family roman
-\series bold
-\shape up
-\size large
-\emph off
-\bar no
-\strikeout off
-\uuline off
-\uwave off
-\noun off
-\color none
- 
-\family default
-\series default
-\shape default
-\size default
-\emph default
-\numeric on
-\bar default
-\strikeout default
-\uuline default
-\uwave default
-\noun default
-\color inherit
-1
-\end_layout
-
-\begin_layout Subsection*
-סעיף
-\family roman
-\series bold
-\shape up
-\size large
-\emph off
-\bar no
-\strikeout off
-\uuline off
-\uwave off
-\noun off
-\color none
- 
-\family default
-\series default
-\shape default
-\size default
-\emph default
-\numeric on
-\bar default
-\strikeout default
-\uuline default
-\uwave default
-\noun default
-\color inherit
-2
-\end_layout
-
-\begin_layout Section*
-שאלה
-\family roman
-\series bold
-\shape up
-\size larger
-\emph off
-\bar no
-\strikeout off
-\uuline off
-\uwave off
-\noun off
-\color none
- 
-\family default
-\series default
-\shape default
-\size default
-\emph default
-\numeric on
-\bar default
-\strikeout default
-\uuline default
-\uwave default
-\noun default
-\color inherit
-9
-\end_layout
-
-\begin_layout Subsection*
-סעיף
-\family roman
-\series bold
-\shape up
-\size large
-\emph off
-\bar no
-\strikeout off
-\uuline off
-\uwave off
-\noun off
-\color none
- 
-\family default
-\series default
-\shape default
-\size default
-\emph default
-\numeric on
-\bar default
-\strikeout default
-\uuline default
-\uwave default
-\noun default
-\color inherit
-1
-\end_layout
-
-\begin_layout Subsection*
-סעיף
-\family roman
-\series bold
-\shape up
-\size large
-\emph off
-\bar no
-\strikeout off
-\uuline off
-\uwave off
-\noun off
-\color none
- 
-\family default
-\series default
-\shape default
-\size default
-\emph default
-\numeric on
-\bar default
-\strikeout default
-\uuline default
-\uwave default
-\noun default
-\color inherit
-2
-\end_layout
-
-\begin_layout Subsection*
-סעיף
-\family roman
-\series bold
-\shape up
-\size large
-\emph off
-\bar no
-\strikeout off
-\uuline off
-\uwave off
-\noun off
-\color none
- 
-\family default
-\series default
-\shape default
-\size default
-\emph default
-\numeric on
-\bar default
-\strikeout default
-\uuline default
-\uwave default
-\noun default
-\color inherit
-3
 \end_layout
 
 \end_body
